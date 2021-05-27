@@ -1,0 +1,113 @@
+{% extends "temp.html" %}
+{% block title %} Homepage {% endblock %}
+{% block description %}Homepage for NauticalEscapes2021 - Ontario's Favourite Boating Adventure Destination{% endblock %}
+{% block css_title %}homepage{% endblock %}
+{% block js_title %}homepage{% endblock %}
+{% block other_scripts %}
+<script src="{{ url_for('static', filename='/res/js/inview.js') }}" defer></script>
+{% endblock %}
+{% block hard_check %}{% include "navbar.html" %}{% endblock %}
+{% block onload %}onload="loadCustomSelect()"{% endblock %}
+{% block content %}
+	<div class="hero visible">
+		<video width="100%" height="100%" muted loop playsinline poster="{{ url_for('static', filename='images/homepage.png') }}">
+		<source src="/static/videos/homepage.mp4">
+		Your Browser Does Not Support The Video Tag.
+		</video>
+		<script>
+		function playVideo() {
+			if (!document.getElementsByTagName("VIDEO")[0].currentTime > 0) {
+				document.getElementsByTagName("VIDEO")[0].play();
+			}
+		}
+		playVideo();
+		document.addEventListener("click", playVideo);
+		document.addEventListener("touchstart", playVideo);
+		</script>
+		<div class="hero_text">
+			<!--<div class="text_cont">
+				<h2>Our Story</h2>
+				<p>Ever since we met back in 2016, we have shared the same passion for many things. Music, boating, and certainly our 5 children. Over the past 5 years our go-to "Date Night" would be spent enjoying live music at many different venues, our favourite genre being The Blues. Every year (Covid-19 Permitting) we would go to The Big Blues Bender in Las Vegas, NV.When we first met, Brian owned a 46' Uniflite Power Yacht. It became quite clear that retiring and living on a boat was something that we were going to aim for. After some discussion about achieving this goal, we decided that the Uniflite would not be economical or safe for the 2 of us to travel in. So we started the search for our new boat. After alot of research we found our baby, A Mainship 400 which we aptly named "Our Song". In 2019 we found ourselves literally taking the plunge, after getting married on our new boat out in Lake Erie with family and close friends. Over the last couple of years we have done everything to set ourselves up with the goal of retiring on "Our Song" in 2021. Our dream has now come to fruition </p>
+			</div>
+			<div class="text_cont">
+				<h2>Our Dreams</h2>
+				<p>Since starting on the adventure of our lifetime, we've often thought about sharing our story and our life with family, friends and anyone interested in living aboard and the lifestyle that comes with it. We also would like to have the ability for people to join us and experience care-free living aboard. In the future, we would love to start offering a variety of services and one-day vacation packages, or 'Daycations'. Can you imagine a relaxing Thai massage aboard our vessel, listening to live music, then enjoy a lovely meal, ending your day with a sunset cruise? Our vision for a Daycation would include: Have an artist join us for live music, provide a Massage from a certified Thai-Massage Therapist or just a good spot to drop-a-line, and a nice sunset cruise to end the day. As of right now, these ideas are still under contruction. If you are interested in learning more, or have any questions, please feel free to explore our website to find out more.</p>
+			</div>-->
+			<h1>Nautical Escapes 2021</h1>
+			<p>Welcome to Nautical Escapes 2021! Since starting on the adventure of our lifetime, we've often thought about sharing our story and our life with family, friends and anyone interested in living aboard and the lifestyle that comes with it.</p>
+			<img alt="Arrows pointing down" src="/static/images/arrows.png" onclick="window.scrollBy(0, screen.height - 80);">
+		</div>
+	</div>
+	<div class="pop_flexbox">
+		<div class="pop_cont">
+			<div class="pop_cont_slideshow">
+				<div class="pop_cont_imgs">
+					<img alt="Lynn and Brian smiling, taking a selfie together on one of their Nautical Escapes" data-src="{{ url_for('static', filename='images/popouts/crew.jpg') }}" class="invisible lazys">
+					<!-- Add More Images -->
+				</div>
+				<!--
+				<div class="pop_cont_radio_cont">
+					<span class="radio_button"></span>
+				</div>
+				-->
+			</div>
+			<div class="pop_cont_text">
+				<h2>Our Story</h2>
+				<p>Ever since we met back in 2016, we have shared the same passion for many things. Music, boating, and certainly our 5 children. Over the past 5 years our go-to "Date Night" would be spent enjoying live music at many different venues, our favourite genre being The Blues. Every year (Covid-19 Permitting) we would go to The Big Blues Bender in Las Vegas, NV.When we first met, Brian owned a 46' Uniflite Power Yacht. It became quite clear that retiring and living on a boat was something that we were going to aim for. After some discussion about achieving this goal, we decided that the Uniflite would not be economical or safe for the 2 of us to travel in. So we started the search for our new boat. After alot of research we found our baby, A Mainship 400 which we aptly named "Our Song". In 2019 we found ourselves literally taking the plunge, after getting married on our new boat out in Lake Erie with family and close friends. Over the last couple of years we have done everything to set ourselves up with the goal of retiring on "Our Song" in 2021. Our dream has now come to fruition.</p>
+				<a class="button_white" href="{{ url_for('main.ourcrew') }}">Go To Our Crew</a>
+			</div>
+		</div>
+		<div class="pop_cont">
+			<div class="pop_cont_slideshow">
+				<div class="pop_cont_imgs">
+					<img alt="Mainship 400, Brian's boat, decorated with lights, and lots of people on board partying." data-src="{{ url_for('static', filename='images/media/boats/IMG_0024.jpg') }}" class="invisible lazys">
+					<!-- Add More Images -->
+				</div>
+				<!--
+				<div class="pop_cont_radio_cont">
+					<span class="radio_button"></span>
+				</div>
+				-->
+			</div>
+			<div class="pop_cont_text">
+				<h2>Our Dreams</h2>
+				<p>Since starting on the adventure of our lifetime, we've often thought about sharing our story and our life with family, friends and anyone interested in living aboard and the lifestyle that comes with it. We also would like to have the ability for people to join us and experience care-free living aboard. In the future, we would love to start offering a variety of services and one-day vacation packages, or 'Daycations'. Can you imagine a relaxing Thai massage aboard our vessel, listening to live music, then enjoy a lovely meal, ending your day with a sunset cruise? Our vision for a Daycation would include: Have an artist join us for live music, provide a Massage from a certified Thai-Massage Therapist or just a good spot to drop-a-line, and a nice sunset cruise to end the day. As of right now, these ideas are still under contruction. If you are interested in learning more, or have any questions, please feel free to explore our website to find out more.</p>
+				<a class="button_white" href="{{ url_for('main.daycations') }}">Go To Daycations</a>
+			</div>
+		</div>
+		<div class="pop_cont">
+			<div class="pop_cont_slideshow">
+				<div class="pop_cont_imgs">
+					<img alt="Mainship 400, Brian's boat, moving into a beautiful orange, Ontario sunrise."data-src="{{ url_for('static', filename='images/popouts/boats.jpg') }}" class="invisible lazys" style="transform: scaleX(-1);">
+					<!-- Add More Images -->
+				</div>
+				<!--
+				<div class="pop_cont_radio_cont">
+					<span class="radio_button"></span>
+				</div>
+				-->
+			</div>
+			<div class="pop_cont_text">
+				<h2>Our Boats</h2>
+				<p>The inventory of our floating homes, grocery getters, and fishing vessels are as follows: A 1976 32' Pacemaker and a 1983 46' Uniflite which are now sold. A 2004 Mainship 400, a 2004 12' Walker Bay Tender, and a 2017 12' Kayak. We are currently looking for a 12'-14' Canoe. Want to find out more? Click the button below to take you to Our Boats page.</p>
+				<a class="button_white" href="{{ url_for('main.ourboats') }}">Go To Our Boats</a>
+			</div>
+		</div>
+	</div>
+	<!--
+	<div class="daycations">
+		<h2>Our Daycations</h2>
+		<h4>Here's some more information about daycations, in general.</h4>
+		{% for daycation in daycations %}
+		<div class="daycation">
+			<h2>{{ daycation.name }}</h2>
+			<img src="{{ url_for('static', filename='images/daycations/') }}{{ daycation.img }}" class="main_img">
+			<div class="daycation_flex">
+				<p>{{ daycation.text1 }}</p>
+			</div>
+			<a class="button_blue" href="{{ url_for('main.daycations') }}">Learn More</a>
+		</div>
+		{% endfor %}
+	</div>
+	-->
+{% endblock %}

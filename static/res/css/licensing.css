@@ -1,0 +1,79 @@
+.contact_hero_info {
+	text-align: left;
+}
+body {
+	height: 100%;
+	overflow: hidden;
+}
+.licensing_privacy {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+}
+.licensing_privacy h1 {
+	width: 100%;
+	font-size: 4vw;
+	color: #122449;
+}
+.licensing_privacy p {
+	width: 100%;
+	font-size: 2vw;
+	color: #666;
+}
+.lic_tit_cont {
+	width: 100%;
+	margin: 2vw 0vw;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+}
+.lic_tit {
+	width: 50%;
+	cursor: pointer;
+}
+.lic_tit h1 {
+	color: #666;
+	font-size: 3vw;
+}
+.lic_tit span {
+	width: 100%;
+	background: #666;
+	display: block;
+	height: 0.4vw;
+	margin: 0 auto;
+}
+.licact span {
+	background: #122449;
+}
+.licact h1 {
+	color: #122449;
+}
+.lic_display_cont {
+	width: 100%;
+	margin: 3vw 0vw;
+	text-align: center;
+}
+
+.lic_display {
+	background: #EEE;
+	padding: 2vw;
+	border-radius: 5px;
+	box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+}
+
+.active h1 {
+	font-size: 2vw;
+	color: #122449;
+	text-align: left;
+	margin: 1vw 0vw;
+}
+.active p {
+	font-size: 1.4vw;
+	color: #666;
+	text-align: left;
+}
+
+.active b {
+	color: #76A1C8;
+}

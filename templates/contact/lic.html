@@ -1,0 +1,62 @@
+{% extends "temp.html" %}
+{% block title %} Licensing And Privacy {% endblock %}
+{% block description %}Nautical Escapes 2021 Licensing And Privacy{% endblock %}
+{% block css_title %}message{% endblock %}
+{% block other_scripts %}
+<script src="{{ url_for('static', filename='res/js/sitemap.js') }}"></script>
+<script src="{{ url_for('static', filename='res/js/licensing.js') }}"></script>
+<link rel="stylesheet" href="/static/res/css/licensing.css">
+{% endblock %}
+{% block hard_check %}{% include "navbar_hard.html" %}{% endblock %}
+{% block onload %}onload="loadCustomSelect()"{% endblock %}
+{% block content %}
+<div class="uc">
+	<img class="exclame" src="/static/images/exclm.png" alt="Exclamation Mark Icon">
+	<span>UNDER CONSTRUCTION</span>
+	<p>This part of the website is still currently under construction! You can still look around but some features will not work until we are ready to implement them.</p>
+	<button class="button_black" onclick="this.parentElement.classList.toggle('nonactive'); document.body.style.overflow = 'auto';">Continue</button>
+	<img src="/static/images/uc.png" alt="Under-construction tape">
+</div>
+<div class="contact_hero">
+	<img src="{{ url_for('static', filename='images/mini/lics.png') }}" alt="Illustration of books on a bookshelf.">
+	<div class="contact_hero_info">
+		<h2>Our Licenses And Certifications</h2>
+		<div class="info_box">
+			<p>Check out the inforamtion that we've collected below of all our certifications, licensing and privacy information. We strongly believe in freedom of information and discourage the way that marketing information is collected and sold in today's online society. As always, none of your information is ever collected, and any cookies used or information entered is non-personal, and is NOT stored anywhere.</p>
+		</div>
+	</div>
+</div>
+<div class="content">
+	<img src="{{ url_for('static', filename='images/turtle.gif') }}" class="fishies" alt="Animation of cartoon turtle swimming behind web-content.">
+	<div class="mini_content">
+		<div class="licensing_privacy">
+			<h1>Licensing and Privacy</h1>
+			<p>Check out the inforamtion below, and if there is any other information that you need, please feel free to get in touch with us.</p>
+		</div>
+		<div class="lic_tit_cont">
+			<div class="lic_tit licact" onclick="swap(this)">
+				<h1>Licensing</h1>
+				<span></span>
+			</div>
+			<div class="lic_tit" onclick="swap(this)">
+				<h1>Privacy</h1>
+				<span></span>
+			</div>
+		</div>
+		<div class="lic_display_cont">
+			<div class="lic_display active" id="Licensing">
+				<h1>i. Specific Licensing</h1>
+				<p>It is a <b>long established fact</b> that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).<br>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+				<h1>ii. Specific Licensing</h1>
+				<p>It is a <b>long established fact</b> that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).<br>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+			</div>
+			<div class="lic_display nonactive" id="Privacy">
+				<h1>i. Specific Privacy</h1>
+				<p>It is a <b>long established fact</b> that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).<br>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+				<h1>ii. Specific Privacy</h1>
+				<p>It is a <b>long established fact</b> that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).<br>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

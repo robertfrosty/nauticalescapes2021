@@ -1,0 +1,69 @@
+{% extends "temp.html" %}
+{% block css_title %}contact{% endblock %}
+{% block title %} Contact Us {% endblock %}
+{% block description %}Contact Nautical Escapes 2021{% endblock %}
+{% block other_scripts %}
+<script src="{{ url_for('static', filename='res/js/sitemap.js') }}"></script>
+{% endblock %}
+{% block hard_check %}{% include "navbar_hard.html" %}{% endblock %}
+{% block onload %}onload="loadCustomSelect()"{% endblock %} 
+{% block content %}
+<div class="contact_hero">
+	<img src="{{ url_for('static', filename='images/mini/social.png') }}" alt="Illustration of people working together to communicate ideas.">
+	<div class="contact_hero_info">
+		<h2>All About Us</h2>
+		<div class="info_box">
+			<p>Looking for more information about us, and our services? You've come to the right place; here you can find links to our <a href="{{ url_for('main.social') }}" class="innerLink">Social Media Pages</a>, any of our <a href="{{ url_for('main.lic') }}" class="innerLink">Certifications and Licenses</a> and much more. In the event that you are looking for information which is not listed here, please use the <a href="{{ url_for('main.sendmessage') }}" class="innerLink">Contact Us Form</a> to get in touch with us.</p>
+		</div>
+	</div>
+</div>
+<div class="content">
+	<img src="{{ url_for('static', filename='images/turtle.gif') }}" class="fishies" alt="Background image of a turtle swimming across the screen.">
+	<div class="mini_content">
+		<h1>Our Crew & Boat</h1>
+		<p class="subheading">Come check out our talented crew, including Captain Brian Lymburner and First Mate Lynn Lymburner. When you're done getting to know your Captain and First Mate, come check out our collection of vessels, or scroll further down the page for contact options.</p>
+		<div class="contact_options">
+			<div class="option">
+				<img src="{{ url_for('static', filename='images/icons/crewi.png') }}" alt="Simple Illustration of Person">
+				<h2>Our Crew</h2>
+				<p class="subheading">Want to get to know us a little better? Check out our auto-biographical <b>Our Crew</b> page.</p>
+				<a href="{{ url_for('main.ourcrew') }}" class="button_blue">All About Us</a>
+			</div>
+			<div class="option">
+				<img src="{{ url_for('static', filename='images/icons/crew.png') }}" alt="Anchor Illustration">
+				<h2>Our Boats</h2>
+				<p class="subheading">Interested in what we're running on? We've got the information you need.</p>
+				<a href="{{ url_for('main.ourboats') }}" class="button_blue">Our Boats</a>
+			</div>
+		</div>
+		<h1>Our Contact Options</h1>
+		<p class="subheading">Looking to get in touch with us? You've come to the right place! Check out all the various way you can get in touch with us, or see what we are up to.</p>
+		<div class="contact_options">
+			<div class="option">
+				<img src="{{ url_for('static', filename='images/icons/mail2.png') }}" alt="Mail zooming somewhere.">
+				<h2>Send Us A Message</h2>
+				<p class="subheading">Got a personal, or business request? Use this page to send us a message, and start a conversation.</p>
+				<a href="{{ url_for('main.sendmessage') }}" class="button_blue">Contact Us</a>
+			</div>
+			<div class="option">
+				<img src="{{ url_for('static', filename='images/icons/soc2.png') }}" alt="Youtube, Facebook and Twitch logos, in bubbles.">
+				<h2>Social Media</h2>
+				<p class="subheading">Interested in learning more, and following us on our adventure? Check out our social media pages, the links of which you can find here.</p>
+				<a href="{{ url_for('main.social') }}" class="button_blue">Social Stuff</a>
+			</div>
+			<div class="option">
+				<img src="{{ url_for('static', filename='images/icons/ques.png') }}" alt="Question Mark">
+				<h2>Frequently Asked Questions</h2>
+				<p class="subheading">Having a problem that feels pretty common? Come here to check out if we've already answered your question.</p>
+				<a href="{{ url_for('main.faq') }}" class="button_blue">Ask Questions</a>
+			</div>
+			<div class="option">
+				<img src="{{ url_for('static', filename='images/icons/doc2.png') }}" alt="Document">
+				<h2>Licensing & Privacy</h2>
+				<p class="subheading">Come here for all the licensing information, certification information and privacy information.</p>
+				<a href="{{ url_for('main.lic') }}" class="button_blue">Boring Stuff</a>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

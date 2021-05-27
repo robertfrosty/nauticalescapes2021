@@ -1,0 +1,15 @@
+<html>
+	<head>
+		<title>Nautical Escapes | Signup Page | Best Boats</title>
+	</head>
+	<body>
+		{% include "navbar.html" %}
+		<div class="content">
+			<form action="/signup" method="POST">
+				<input type="text" id="username" name="username">
+				<input type="password" id="password" name="password">
+				<input type="submit">	
+			</form>
+		</div>
+	</body>
+</html>

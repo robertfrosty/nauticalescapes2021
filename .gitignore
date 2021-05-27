@@ -1,0 +1,16 @@
+#Ignore Files With Secret Keys
+charterboats.py
+
+#ignore Log Files
+app.log
+
+#Ignore VirtualEnv Packages And PyCache
+charterboatsenv/
+__pyache__/
+
+#Instead Provide requirements.txt
+!charterboatsenv/requirements.txt
+
+#Ignore Static Images, Videos, GIFs etc.
+static/images/
+static/videos/

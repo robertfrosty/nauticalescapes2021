@@ -1,0 +1,69 @@
+{% extends "temp.html" %}
+{% block title %} Gallery {% endblock %}
+{% block description %} Nautical Escapes 2021 Image Gallery{% endblock %}
+{% block css_title %}media{% endblock %}
+{% block js_title %}media{% endblock %}
+{% block hard_check %}{% include "navbar.html" %}{% endblock %}
+{% block onload%}onload="loadCustomSelect()"{% endblock %}
+{% block content %}
+<div class="hero">
+	<video width="100%" height="100%" autoplay muted loop>
+	<source src="{{url_for('static',filename='videos/output_1.mp4')}}">
+	[Warning]Your Browser Does Not Support The Video Tag
+	</video>
+	<!--<img src= alt="Timelapse of water going over the Niagara Falls located in Ontario, Canada"> -->
+	<div class="hero_text">
+		<h1>Our Gallery</h1>
+		<p>One of our favourite things to do is take pictures & videos, whether it be for our records, or to share! Below you can find our various collections of photos that we want to share with the world.</p>
+		<!--
+		<div class="info_box">
+			<p>One of our favourite things to do is take pictures & videos. Whether it be for our records or to share. Below you can find our various collections of photos that we want to share with the world.</p>
+		</div>
+		-->
+	</div>
+</div>
+<div class="content">
+	<h1>Our Image Gallery</h1>
+	<p class="subheading">Welcome to our collection of images! Select one of the options below to see certain types of images, or head further down the page to check out our collection in it's entirety.</p>
+	<div class="polar_box">
+		{% for list in media %}
+		{% set var = range(0, list['content']|length) | random %}
+		<a href="/gallery/{{list['header']}}" class="polar">
+			<img src="{{ url_for('static', filename='images/media/') }}{{list['header']}}/{{list['content'][var]}}" alt="image of {{ list['header'] }}">
+			<span><i>{{list['header']}}</i></span>
+		</a>
+		{% endfor %}
+	</div>
+	<div class="our_images">
+		<h1>All Images</h1>
+		<p class="subheading">Check out all of our images below, and if you just can't get enough of the fantastic pictures we have taken, follow us on Instagram, Facebook, and subscribe to our Youtube Channel.</p>
+		<div class="btngroup">
+		<!--
+		<button onclick="rimages()" class="button_white">Images Only</button>
+		<button onclick="rgifs()" class="button_white">Gifs Only</button>
+		-->
+		</div>
+		<div class="image_slides" id="image_slides">
+			{% set test = namespace(value=1) %}
+			{% for list in media %}
+			{% for image in list["content"] %}
+			<div class="slidebox">
+				<img class="trgimg lazys" src="{{ url_for('static', filename='images/fallback.png') }}" data-src="{{ url_for('static', filename='images/media/') }}{{ list['header'] }}/{{ image }}" onclick="imgfs(this)" id="{{ test.value }}" alt="image of {{ list['header'] }}">
+				<img src="{{ url_for('static', filename='images/icons/x-icons/whitex.png') }}" class="icon_cont invisible">
+			</div>
+			{% set test.value = test.value + 1 %}
+			{% endfor %}
+			{% endfor %}
+			<div class="blownup_nav" onmousemove="hovScroll(event.clientX)" onmouseleave="stopProp()">
+				{% set test = namespace(value=1) %}
+				{% for list in media %}
+				{% for item in list["content"] %}
+					<img data-src="{{url_for('static',filename='images/media/')}}{{list['header']}}/{{ item }}" onclick="both(document.getElementById({{ test.value }}))" class="lazys">
+				{% set test.value = test.value + 1 %}
+				{% endfor %}
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

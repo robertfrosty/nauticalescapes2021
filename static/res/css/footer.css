@@ -1,0 +1,163 @@
+* {
+	margin: 0;
+}
+
+.footer {
+	margin-top: 5vw;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #122449;
+	padding: 1.4vw 0vw;
+}
+
+.footer li {
+	font-size: 1.4vw;
+}
+
+.footer .innerList li a{
+	font-size: 1.2vw;
+	color: #BAB1BA;
+}
+
+.footer a {
+	text-decoration: none;
+	color: #76A1C8;
+}
+
+.footer ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.footer_top {
+	display: flex;
+	width: calc(100% - 8vw);
+	margin: 2vw 4vw;
+}
+
+.footer .nav {
+	
+}
+
+.footer .nav .title4, .footer .rel .title4 {
+	font-size: 2.6vw;
+	color: #FFF;
+	display: block;
+	margin: 2vw 0vw;
+	white-space: nowrap;
+}
+
+.footer .logo_cont {
+}
+
+.footer .logo_cont svg {
+	height: 10vw;
+	display: block;
+	margin: 0 auto;
+}
+
+.footer .rel {
+	margin: 0vw 5vw;
+}
+
+.footer .social {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+
+.footer .social img, .footer .social svg {
+	width: auto;
+	height: 2vw;
+	padding: 0.4vw 1vw;
+}
+
+.footer .innerList {
+	margin-left: 0.8vw;
+}
+
+.footer .innerList li:nth-child(odd) {
+}
+
+.footer .poweredby {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	margin-top: 1vw;
+}
+
+.footer .poweredby h6 {
+	text-align: center;
+	width: 100%;
+}
+
+.footer .poweredby img {
+	width: auto;
+	height: 1.4vw;
+	padding: 0.4vw 1vw;
+}
+
+.footer .tri {
+	display: none;
+}
+
+/* Tablet */
+@media screen and (min-width:769px) and (max-width: 1024px) {
+
+}
+/* Mobile */
+@media screen and (min-width:214px) and (max-width: 768px) {
+	.footer_top {
+		flex-wrap: wrap;
+		width: 50%;
+		margin: 2vw auto;
+	}
+	.footer .nav .title4, .footer .rel .title4 {
+		font-size: 6vw;
+		border-bottom: 2px solid #FFF;
+		display: flex;
+		align-items: center;
+		margin: 2vw auto;
+		position: relative;
+		cursor: pointer;
+	}
+	.footer .nav .title4 .tri, .footer .rel .title4 .tri {
+		display: initial;
+		content: "";
+		cursor: pointer;
+		width: 0;
+		height: 0;
+		border: 1.4vw solid transparent;
+		margin: 2.5vw 0.4vw 0vw 1.4vw;
+		border-color: #FFF transparent transparent transparent;
+		position: absolute;
+		right: 0;
+	}
+	.footer .rel, .footer .nav {
+		width: 100%;
+		margin: 2vw 0vw;
+	}
+	.footer ul {
+		margin-left: 0.4vw;
+	}
+	.footer li a {
+		font-size: 4vw;
+	}
+	.footer .innerList li a {
+		font-size: 3.4vw;
+	}
+	.footer .logo_cont svg {
+		height: 25vw;
+	}
+	.footer .social svg {
+		height: 5vw;
+	}
+	.footer .poweredby {
+		font-size: 3vw;
+	}
+}

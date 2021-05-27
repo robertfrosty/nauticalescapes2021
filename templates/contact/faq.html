@@ -1,0 +1,69 @@
+{% extends "temp.html" %}
+{% block title %} Frequently Asked Questions {% endblock %}
+{% block description %}Nautical Escapes 2021 Frequently Asked Questions{% endblock %}
+{% block css_title %}faq{% endblock %}
+{% block other_scripts %}
+<script src="{{ url_for('static', filename='res/js/sitemap.js') }}"></script>
+{% endblock %}
+{% block hard_check %}{% include "navbar_hard.html" %}{% endblock %}
+{% block onload %}onload="loadCustomSelect()"{% endblock %}
+{% block content %}
+<div class="contact_hero">
+	<img src="{{ url_for('static', filename='images/mini/laptop2.png') }}" alt="Illustration of man looking confused at a laptop.">
+	<div class="contact_hero_info">
+		<h2>Frequently Asked Questions</h2>
+		<div class="info_box">
+			<p>If you've got questions, we've got answers! Check out the page below to look at some of the commonly asked questions that we get, and our responses to them. If you want to stay up-to-date with what we are doing, head on over to our <a href="{{ url_for('main.social') }}" class="innerLink">Social Media Pages</a> and start a converstaion with us!</p>
+		</div>
+	</div>
+</div>
+<div class="content">
+	<img src="{{ url_for('static', filename='images/catfish.gif') }}" class="fishies" alt="Animation of cartoon catfish swimming behind web-content.">
+	<div class="mini_content">
+		<h1>Frequently Asked Questions</h1>
+		<p class="subheading">Below, the questions are coloured in the lighter blue (cyan) text bubbles, and the respective answers immediately follow and are displayed inside the darker blue text bubbles.</p>
+		<div class="question_box">
+			<div class="question">
+				<span class="title4">Question</span>
+				<p>Where will your food and water come from?</p>
+			</div>
+			<div class="answer">
+				<span class="title4">Answer</span>
+				<p>There is a storage setup on board for provisioning. A pantry has been set-up under the spare bed with enough food to last at least a month. We will manage that inventory and automatically create a shopping list as required. Our walks into town/local markets will allow us to refresh our inventory and purchase fresh perishables. Our water supply can come from a Marina's water source, or if we are at anchor, our Seawater Pro Watermaker will produce 40 GPH of suitable drinking water.</p>
+			</div>
+			<div class="question">
+				<span class="title4">Question</span>
+				<p>When you're living aboard the boat, how long do you plan on being on the water, but away from a marina or shoreline?</p>
+			</div>
+			<div class="answer">
+				<span class="title4">Answer</span>
+				<p>As long as possible! We can anchor and run our built-in generator as required to ensure our batteries are charged. We have 8D batteries that are considered 'house batteries'; they will run the refrigerator, stove, water pumps and any other ulitities that we may need.</p>
+			</div>
+			<div class="question">
+				<span class="title4">Question</span>
+				<p>When can I start going on daycations with Nautical Escapes 2021?</p>
+			</div>
+			<div class="answer">
+				<span class="title4">Answer</span>
+				<p>We are currently in the process of organizing and aquiring the necessary licenses for us to operate our business idea within Ontario. While there is currently no set date, please <a href="{{ url_for('main.sendmessage') }}">Contact Us</a> if you would like more details.</p>
+			</div>
+			<div class="question">
+				<span class="title4">Question</span>
+				<p>Where did Nautical Escapes 2021 originate? Why is it called Nautical Escapes <b>2021</b>?</p>
+			</div>
+			<div class="answer">
+				<span class="title4">Answer</span>
+				<p>Nautical Escapes was an idea that we had, originating from our goal of sharing our adventures with family and friends. It's not the name of our boat, and never will be, as we think that having a name seperate from the name of vessel makes it easier for our friends and family to follow us on social media; we can always be found at @NauticalEscapes2021 on all of our social media platforms. When looking for the available names for people to follow us at, we decided to add '2021' to the end because that's the year we retired and started our new journey.</p>
+			</div>
+			<div class="question">
+				<span class="title4">Question</span>
+				<p>What is the future of Nautical Escapes 2021?</p>
+			</div>
+			<div class="answer">
+				<span class="title4">Answer</span>
+				<p>The future of Nautical Escapes 2021 is safely travelling the beautiful waterways of Canada. We have a list of destinations, such as the Trent/Severn Canal, Rideau Canal, Montreal, The Thousand Islands, Toronto, Georgian Bay, the North Channel and many more. If the borders open up any time soon (fingers crossed), we plan to cruise to warmer climates during the winter.</p>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

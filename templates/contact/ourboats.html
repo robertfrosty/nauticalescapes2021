@@ -1,0 +1,123 @@
+{% extends "temp.html" %}
+{% block css_title %}ourboats{% endblock %}
+{% block title %}Our Boats{% endblock %}
+{% block description %}Our Boats page for NauticalEscapes2021{% endblock %}
+{% block js_title %}ourboats{% endblock %}
+{% block other_scripts %}
+{% endblock %}
+{% block hard_check %}{% include "navbar_hard.html" %}{% endblock %}
+{% block onload %}onload="loadCustomSelect()"{% endblock %}
+{% block content %}
+<div class="contact_hero">
+	<img src="/static/images/media/boats/IMG_0024.jpg" alt="Band playing on top of big boat in the water." style="transform: scaleX(-1);">
+	<div class="contact_hero_info">
+		<h2>Our Boats</h2>
+		<div class="info_box">
+			<p>Come see our collection of floating homes, grocery getters, and fishing vessels that we've owned and operated over the years. If you are looking for any other information, feel free to check out our <a href="{{ url_for('main.sendmessage') }}" class="innerLink">contact us page</a>.</p>
+		</div>
+	</div>
+</div>
+<div class="boat_cont">
+	<label>
+		<img src="{{ url_for('static', filename='images/arrows.png') }}" alt="Arrows pointing down." class="arrows" onclick="onChange(this, simpDrop)">
+		<input type="checkbox" class="nonactive" checked>
+	</label>
+	<div class="boat_prof">
+		<img src="{{ url_for('static', filename='images/media/boats/IMG_4410.jpg') }}" alt="Navy blue boat on the docks." style="transform: scaleX(-1);">
+		<div class="prof_title">
+			<h1>Our Song</h1>
+			<span class="mini_title">2004 Mainship 400 Trawler</span>
+			<p>We chose a Trawler so we could take the leisurely route, often cruising at 7-10 knots. She's economical and very comfortable.<br>Trawlers are a very distinct type of power boat, designed for long distance cruising and in many cases, living aboard for significant stretches of time.</p>
+		</div>
+		<div class="prof_info">
+			<div class="info">
+				<img src="{{ url_for('static', filename='images/mainfly.jpg') }}" alt="SMall Image of the bbq, on the top deck.">
+				<p>Beautiful, spacious flybridge; perfect for entertaining guests and barbequing.</p>
+			</div>
+			<div class="info">
+				<img src="{{ url_for('static', filename='images/cummain.jpg') }}" alt="A 380 Cummins Diesel engine.">
+				<p>Cummins 380 Horsepower Diesel and 9kW Onan generator, combined with the watermaker and Garmin navigational equipment provides economical cruising and live-aboard.</p>
+			</div>
+			<div class="info">
+				<img src="{{ url_for('static', filename='images/cherrywood.jpg') }}" alt="Galley, with beautiful cherrywood interior.">
+				<p>Gorgeous cherry-wood interior all throughout, and two staterooms make living aboard a dream.</p>
+			</div>
+		</div>
+	</div>
+	<div class="boat_prof">
+		<img src="{{ url_for('static', filename="images/uniflyte.jpg") }}" alt="Big white boat, on the docks.">
+		<div class="prof_title">
+			<h1>My Condo</h1>
+			<span class="mini_title">1983 Uniflite 46 Motor Yacht</span>
+			<p>This was our first experience with a boat of this size; The entire boat was very spacious, including the flybridge which provided lots of room for guests</p>
+		</div>
+		<div class="prof_info">
+			<div class="info">
+				<img src="{{ url_for('static', filename='images/unifly.jpg') }}" alt="Steering wheel on the upper deck.">
+				<p>This Flybridge had a second helm, barbeque and lots of seating. It's a great perch to navigate from.</p>
+			</div>
+			<div class="info">
+				<img src="{{ url_for('static', filename='images/detroit.jpg') }}" alt="Detroit 671 Diesel engine">
+				<p>Twin Detroit Diesel 671's propelled us around the Great Lakes with a top speed of 18 knots.</p>
+			</div>
+			<div class="info">
+				<img src="{{ url_for('static', filename='images/uniteak.jpg') }}" alt="Galley, with a beautiful teak interior.">
+				<p>Beautiful teak hardwood all throughout the triple stateroom layout,that included two heads.</p>
+			</div>
+		</div>
+	</div>
+	<div class="boat_prof">
+		<img src="{{ url_for('static', filename="images/pacemaker.jpg") }}" alt="White and blue boat, on the docks.">
+		<div class="prof_title">
+			<h1>Nite Dreams</h1>
+			<span class="mini_title">1976 Pacemaker 32 Sedan Cruiser</span>
+			<p>This vessel was a first for many things, such as a Flybridge, twin drives, sleeping quarters etc. Comfortable boat for small gatherings.</p>
+		</div>
+		<div class="prof_info">
+			<div class="info">
+				<img src="{{ url_for('static', filename='images/pacefly.jpg') }}" alt="Boat on stands out of the water.">
+				<p>Very comfortable vessel. Size was perfect for day trips and weekend get-aways.</p>
+			</div>
+			<div class="info">
+				<img src="{{ url_for('static', filename='images/pacengine.jpg') }}" alt="Twin crusader 305 engines.">
+				<p>Twin Crusader 305's propelled the Pacemaker along at 15 Knots, and played a large role in developing our love for boats.</p>
+			</div>
+			<div class="info">
+				<img src="{{ url_for('static', filename='images/pacegall.jpg') }}" alt="Galley, with a beautiful teak interior">
+				<p>Beautiful teak throughout. The galley was set up to make great use of small space. Slept 4 adults comfortably.</p>
+			</div>
+		</div>
+	</div>
+</div>	
+<div class="inv">
+	<h1>A Day In The Life</h1>
+	<p>Our Lifestyle and Beliefs</p>
+	<div class="inv_cont">
+		<div class="img_cont">
+			<img src="{{ url_for('static', filename='images/vegetables.jpg') }}" alt="Basket of veggies.">
+		</div>
+		<div class="text_cont">
+			<h1>Healthy Living</h1>
+			<p>Eating healthy, staying active, and maintaing positive mental health habits are all cornerstones in the foundation of our life. We catch & eat fish, staying with our pesquatarian lifestyle. Swimming, yoga and walks are a daily thing when we're on shore.</p>
+		</div>
+	</div>
+	<div class="inv_cont">
+		<div class="img_cont">
+			<img src="{{ url_for('static', filename='images/plants.jpg') }}" alt="Beautiful green plants.">
+		</div>
+		<div class="text_cont">
+			<h1>Sustainable Living</h1>
+			<p>This planet is the only one we have, and it's our responsibility to take care of it, and preserve it for future generations. We aim to recycle, reuse and always pick up garbage whether it's in the water or on shore. You would not believe how many balloons we pick up on the water.</p>
+		</div>
+	</div>
+	<div class="inv_cont">
+		<div class="img_cont">
+			<img src="{{ url_for('static', filename='images/wave.jpg') }}" alt="Big wave crashing on the beach.">
+		</div>
+		<div class="text_cont">
+			<h1>Onboard Living</h1>
+			<p>Living a one hundred percent onboard lifestyle can be a daunting, but rewarding task to take on. Our onboard watermaker gives us fresh water no matter where we are, and we have a herb garden with tomatoe plants for fresh greens and veggies.</p>
+		</div>
+	</div>
+</div>
+{% endblock %}

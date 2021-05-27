@@ -1,0 +1,124 @@
+{% extends "temp.html" %}
+{% block title %} Social Hub {% endblock %}
+{% block description %}Nautical Escapes 2021 Social Hub{% endblock %}
+{% block css_title %}social{% endblock %}
+{% block js_title %}social{% endblock %}
+{% block other_scripts %}
+<script src="{{ url_for('static', filename='res/js/sitemap.js') }}"></script>
+{% endblock %}
+{% block onload %}onload="loadCustomSelect()"{% endblock %}
+{% block hard_check %}{% include "navbar_hard.html" %}{% endblock %}
+{% block content %}
+<div class="contact_hero">
+	<img src="/static/images/mini/bubbles.png" alt="Illustrations of social media logos in bubbles.">
+	<div class="contact_hero_info">
+		<h2>Social Media Navigation</h2>
+		<div class="info_box">
+			<p>Check out our most recent social media posts below, and feel free to follow the links to our social media accounts and start a conversation with us! Alternatively, hop on over to our <a href="{{ url_for('main.sendmessage') }}" class="innerLink">Send Us A Message</a> page, to get in touch with us directly and immediately.</p>
+		</div>
+	</div>
+</div>
+<div class="content">
+	<img src="{{ url_for('static', filename='images/minnowsfinal.gif') }}" class="fishies" alt="Animation of a school of cartoon fishing swimming behind the web-content.">
+	<div class="mini_content">
+		<div class="social_main">
+			<h1 class="title">Social Media</h1>
+			<div class="social_hero">
+				<img src="{{ url_for('static', filename='images/hero/hero1.jpg') }}" alt="Mainship 400, 'Our Song', sailing through the water, with the sunset behind it.">
+				<span class="title4">Come Join Us On Our Adventure</span>
+				<div class="social_cont">
+					<a href="https://www.youtube.com/channel/UC1aitfN7BSUSjaSjqYes9VQ" target="_blank" rel="noreferrer"><img src="{{ url_for('static', filename='images/icons/youtube.png') }}" alt="Youtube logo">Youtube</a>
+					<a href="https://www.facebook.com/nautical.escapes.12" target="_blank" rel="noreferrer"><img src="{{ url_for('static', filename='images/icons/facebook.png') }}" alt="Facebook logo">Facebook</a>
+					<a href="https://www.twitch.com/" target="_blank" rel="noreferrer"><img src="{{ url_for('static', filename='images/icons/twitch.png') }}" alt="Twitch logo">Twitch</a>
+					<a href="https://www.instagram.com/nauticalescapes2021/?hl=en" target="_blank" rel="noreferrer"><img src="{{ url_for('static', filename='images/icons/instagram.png') }}" alt="Instagram">Instagram</a>
+				</div>
+				<span class="title4">@nauticalescapes2021</span>
+			</div>
+			<!--<div class="social_cont">
+				<div class="soc_opt socact" onclick="swap(this)">
+					<h1>Youtube</h1>
+					<span></span>
+				</div>
+				<div class="soc_opt" onclick="swap(this)">
+				<h1>Facebook</h1>
+					<span></span>
+				</div>
+				<div class="soc_opt" onclick="swap(this)">
+				<h1>Instagram</h1>
+					<span></span>
+				</div>
+				<div class="soc_opt" onclick="swap(this)">
+				<h1>Twitch</h1>
+					<span></span>
+				</div>
+			</div>
+			<div class="img_cont">
+				<div class="img_cont_display active"id="Youtube">
+					<div class="display_imgs">
+						<img src="{{url_for('static',filename='images/hero/hero1.jpg')}}">
+					</div>
+					<div class="display_text">
+						<h4>Youtube Stuff</h4>
+						<p>2021-02-12</p>
+					</div>
+					<div class="display_radio">
+					</div>
+					<div class="display_desc">
+						<p class="subheading">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+						<a href="" class="button_blue"></a>
+					</div>
+				</div>
+				<div class="img_cont_display nonactive"id="Facebook">
+					<div class="display_imgs">
+						<img src="{{url_for('static',filename='images/hero/hero1.jpg')}}">
+					</div>
+					<div class="display_text">
+						<h4>Facebook Stuff</h4>
+						<p>This is not empty.</p>
+					</div>
+					<div class="display_radio">
+					</div>
+					<div class="">
+						<h4></h4>
+						<p class="subheading">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+						<a href="" class="button_blue"></a>
+					</div>
+				</div>
+				<div class="img_cont_display nonactive"id="Instagram">
+					<div class="display_imgs">
+						<img src="{{url_for('static',filename='images/hero/hero1.jpg')}}">
+					</div>
+					<div class="display_text">
+						<h4>Instagram Stuff</h4>
+						<p>This is not empty.</p>
+					</div>
+					<div class="display_radio">
+					</div>
+					<div class="">
+						<h4></h4>
+						<p class="subheading">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+						<a href="" class="button_blue"></a>
+					</div>
+				</div>
+				<div class="img_cont_display nonactive"id="Twitch">
+					<div class="display_imgs">
+						<img src="{{url_for('static',filename='images/hero/hero1.jpg')}}">
+					</div>
+					<div class="display_text">
+						<h4>Twitch Stuff</h4>
+						<p>This is not empty.</p>
+					</div>
+					<div class="display_radio">
+					</div>
+					<div class="">
+						<h4></h4>
+						<p class="subheading">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+						<a href="" class="button_blue"></a>
+					</div>
+				</div>
+			</div>
+			-->
+		</div>
+	</div>
+</div>
+{% endblock %}

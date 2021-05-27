@@ -1,0 +1,125 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Trispace&display=swap');
+body {
+
+		font-size: 1.4vw;
+                padding-top: 1.6em;
+                padding-left: 10em;
+                font-family: 'Trispace', sans-serif;
+                color: #ba1854;
+                background-color: #333333;
+        }
+
+.content {
+		min-height: 100%;
+		display: grid;
+		place-items: center;
+
+	}
+
+        ul.navbar {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+                position: absolute;
+                top: 2em;
+                left: 1em;
+                width: 9em;
+
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Teko&family=Trispace&display=swap');
+        h1 {
+                font-family: 'Teko', sans-serif;
+
+        }
+
+        ul.navbar li {
+                background: white;
+                margin: 0.5em 0;
+                padding: 0.3em;
+                border-right: 1em solid black;
+
+        }
+
+        ul.navbar a {
+                text-decoration: none;
+
+        }
+
+        a:link {
+                color:blue;
+
+        }
+
+        a:visited {
+                color: purple;
+
+        }
+
+        adress {
+                margin-top: 1em;
+                padding-top: 1em;
+                border-top: thin dotted;
+
+        }
+
+
+#centeredmenu {
+	float:left;
+	width:100%;
+	background:#fff;
+	border-bottom:4px solid #000;
+	overflow:hidden;
+	position:relative;
+
+}
+
+#centeredmenu ul {
+	clear:left;
+	float:left;
+	list-style:none;
+	margin:0;
+	padding:0;
+	position:relative;
+	left:50%;
+	text-align:center;
+
+}
+
+#centeredmenu ul li {
+	display:block;
+	float:left;
+	list-style:none;
+	margin:0;
+	padding:0;
+	position:relative;
+	right:50%;
+
+}
+
+#centeredmenu ul li a {
+	display:block;
+	margin: 0 0 0 1px;
+	padding:3px 10px;
+	background:#ddd;
+	color:#000;
+	text-decoration:none;
+	line-height:1.3em;
+
+}
+
+#centeredmenu ul li a:hover {
+	background:#369;
+	color:#fff;
+
+}
+
+#centeredmenu ul li a.active,
+#centeredmenuul li a.active:hover {
+	color:#fff;
+	background:#000;
+	font-weight:bold;
+
+}
+	 

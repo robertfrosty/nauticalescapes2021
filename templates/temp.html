@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="{% block description %}{% endblock %}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='res/css/main.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='res/css/') }}{%block css_title %}homepage{% endblock %}.css">
+		{% block other_scripts %}
+		{% endblock %}
+		<script src="{{ url_for('static', filename='res/js/critical.js') }}"></script>
+		<script src="{{ url_for('static', filename='res/js/') }}{% block js_title %}homepage{% endblock %}.js" defer></script>
+		<title>Nautical Escapes 2021 | {% block title %}Homepage{% endblock %} | Join Us For The Adventure Of A Lifetime</title>
+		<link rel="icon" href="{{ url_for('static', filename='images/icons/logofinalnotext.png') }}">
+	</head>
+	<body {% block onload %}{% endblock %}>
+	{% block hard_check %}
+	{% endblock %}
+	{% block sitemap %}
+	{% endblock %}
+	{% block content %}
+	{% endblock %}
+	{% include "footer.html" %}
+	</body>
+</html>

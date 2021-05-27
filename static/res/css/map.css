@@ -1,0 +1,18 @@
+.map_container {
+	
+}
+
+.map_image {
+}
+
+.map {
+	height: 20vw;
+	width: 40vw;
+	object-fit: cover;
+	object-position: 50% 50%;
+	cursor: grab;
+}
+
+.map:active {
+	cursor: grabbing;
+}

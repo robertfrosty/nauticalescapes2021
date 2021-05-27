@@ -1,0 +1,20 @@
+{% extends "temp.html" %}
+{% block css_title %}map{% endblock %}
+{% block title %} map {% endblock %}
+{% block js_title %}map{% endblock %}
+{% block other_scripts %}
+<script src="{{ url_for('static', filename='res/js/sitemap.js') }}"></script>
+<script src="{{ url_for('static', filename='res/js/navbar.js') }}"></script>
+{% endblock %}
+{% block hard_check %}{% include "navbar_hard.html" %}{% endblock %}
+{% block sitemap %}{% include "sitemap_hor.html" %}{% endblock %}
+{% block onload %}onload="loadCustomSelect()"{% endblock %}
+{% block content %}
+<div class="content">
+	<div class="map_container">
+		<div class="map_image">
+			<img src="{{ url_for('static', filename='images/maps/map1.png') }}" class="map" onmousedown="mapDown(event)" onmouseup="mapUp(event)" onmousemove="mvMouse(event)">
+		</div>
+	</div>
+</div>
+{% endblock %}

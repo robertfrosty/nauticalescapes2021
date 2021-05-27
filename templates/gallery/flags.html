@@ -1,0 +1,95 @@
+{% extends "temp.html" %}
+{% block css_title %}mediat{% endblock %}
+{% block title %} {{mediat["header"]}} {% endblock %}
+{% block description %}Nautical Escapes 2021 Flags Gallery Page{% endblock %}
+{% block other_scripts %}
+<link rel="stylesheet" href="{{ url_for('static', filename='res/css/hero.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='res/css/photopile.css') }}">
+<script src="{{ url_for('static', filename='res/js/sitemap.js') }}"></script>
+<script src="{{ url_for('static', filename='res/js/lcs_ig.js') }}"></script>
+<script src="{{ url_for('static', filename='res/js/media.js') }}"></script>
+<script src="{{ url_for('static', filename='res/js/photopile.js') }}"></script>
+<script src="{{ url_for('static', filename='res/js/dragscroll.js') }}"></script>
+{% endblock %}
+{% block hard_check %}{% include "navbar_hard.html" %}{% endblock %}
+{% block onload %}onload="loadCustomSelect()"{% endblock %}
+{% block content %}
+<div class="contact_hero">
+	<img src="{{ url_for('static', filename='images/media/') }}{{ mediat['header'] }}/{{ mediat['content'][0] }}" alt="Cruise ship in port with a tall canadian flag in the background">
+	<div class="contact_hero_info">
+		<h2 style="text-transform: capitalize;">{{ mediat["header"] }}</h2>
+		<div class="info_box">
+			<p>We are both born and bred Canadians eh!! One of our mandates for this webpage is to promote our Canadian heritage!</p>
+		</div>
+	</div>
+</div>
+<div class="content">
+	<div class="infobox_cont">
+		<div class="infobox">
+			<div class="infobox_text">
+				<h2>Our Favourites</h2>
+				<p>We thought it would be fun to take various pictures of Canadian flags, both on boats and near the shore.</p>
+			</div>
+			<div class="infobox_slideshow">
+				<div class="polar">
+					<img src="{{ url_for('static', filename='images/media/flags/toronto.jpg') }}" alt="Toronto skyline in the back with a canadian flag in focus">
+					<span><i>Canada #1</i></span>
+				</div>
+				<div class="polar">
+					<img src="{{ url_for('static', filename='images/media/flags/IMG_1985.jpg') }}" alt="Canadian flag in front of a lake">
+					<span><i>Canada #2</i></span>
+				</div>
+				<div class="polar">
+					<img src="{{ url_for('static', filename='images/media/flags/0FullSizeRender.jpeg') }}" alt="Canadian flag alongside the shore">
+					<span><i>Canada #3</i></span>
+				</div>
+			</div>
+		</div>
+		<div class="infobox">
+			<div class="infobox_text">
+				<h2>Flags Of The World</h2>
+				<p>In our travels we have come across many nationalities. We plan on taking many more pictures of any flags that cross our path.</p>
+			</div>
+			<div class="infobox_slideshow">
+				<div class="polar">
+					<img src="{{ url_for('static', filename='images/media/flags/egypt.jpg') }}" alt="egyptian flag on back of a boat">
+					<span><i>Egypt</i></span>
+				</div>
+				<div class="polar">
+					<img src="{{ url_for('static', filename='images/media/flags/croatia.jpg') }}" alt="croatian flag on the back of a boat">
+					<span><i>Croatia</i></span>
+				</div>
+				<div class="polar">
+					<img src="{{ url_for('static', filename='images/media/flags/us.jpg') }}" alt="U.S flag on the back of a boat">
+					<span><i>U.S.A</i></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="images">
+		<h2>All Images</h2>
+		<p class="subheading">Check out all of our images below, and if you just can't get enough of the fantastic {{ mediat['header'] }} pictures, follow us on Instagram, Facebook, and subscribe to our Youtube Channel.</p>
+		<!--
+		<button onclick="rimages()" class="button_white">Images Only</button>
+		<button onclick="rgifs()" class="button_white">Gifs Only</button>
+		-->
+		<div class="image_slides" id="image_slides">
+		{% for item in mediat["content"] %}
+			<div class="slidebox">
+				<img class="trgimg lazys" src="{{ url_for('static', filename='images/fallback.png') }}" data-src="{{ url_for('static', filename='images/media/') }}{{ mediat['header'] }}/{{item}}" onclick="imgfs(this)" id="{{ loop.index }}" alt="{{ mediat['header'] }}">
+				<img src="{{ url_for('static', filename='images/icons/x-icons/whitex.png') }}" class="icon_cont invisible">
+			</div>
+		{% endfor %}
+		</div>
+		<div class="blownup_nav" onmousemove="hovScroll(event.clientX)" onmouseleave="stopProp()">
+			{% for item in mediat["content"] %}
+				<img data-src="{{ url_for('static', filename='images/media/') }}{{ mediat['header'] }}/{{item}}" onclick="both(document.getElementById({{loop.index}}))">
+			{% endfor %}
+		</div>
+	</div>
+	<div class="video_cont">
+	</div>
+	<div class="other_videos">
+	</div>
+</div>
+{% endblock %}

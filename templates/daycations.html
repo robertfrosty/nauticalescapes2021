@@ -1,0 +1,194 @@
+{%extends "temp.html" %}
+{% block css_title %}daycations{% endblock %}
+{% block title %} Daycations {% endblock %}
+{% block description %}Daycations page for NauticalEscapes2021 - Ontario's Favourite Boating Adventure Destination{% endblock %}
+{% block other_scripts %}
+<script src="{{ url_for('static', filename='res/js/sitemap.js') }}"></script>
+<script src="{{ url_for('static', filename='res/js/inview.js') }}"></script>
+{% endblock %}
+{% block hard_check %}{% include "navbar.html" %}{% endblock %}
+{% block onload %}onload="loadCustomSelect()"{% endblock %}
+{% block content %}
+{% include "const.html" %}
+<div class="hero visible">
+		<video width="100%" height="100%" autoplay muted loop>
+		<source src="/static/videos/kayak_lrg.mp4">
+		Your Browser Does Not Support The Video Tag.
+		</video>
+		<div class="hero_text">
+			<h1>Ready For A Daycation?</h1>
+			<p>Explore Ontario's beautiful lakes, and rivers with us. Leave the troubles of life on the shore and come and get in on the fun and the sun. Participate in one of our pre-built "Daycation" packages. From live music, to dinner on the water watching the sun set. We've got something for everyone.</p>
+			<img src="/static/images/arrows.png" onclick="window.scrollBy(0, screen.height - 80);" alt="Arrow pointing downwards">
+		</div>
+	</div>
+<div class="daycations_title">
+	<h1>Daycations</h1>
+</div>
+</div>
+<div class="daycations_shapes">
+	<div class="shapeflex">
+		<div class="shapeflex_shape">
+			<img src="{{ url_for('static', filename='images/clip3.png') }}" class="clip" alt="Boat in front of beautiful sunset">
+			<img data-src="{{ url_for('static', filename='images/daycations/sunset.jpg') }}" class="bg lazys" alt="Boat in front of beautiful sunset">
+		</div>
+		<div class="shapeflex_text">
+			<span class="title2">Sunset Cruise</span>
+			<p class="subheading">Nothing beats watching the sunset over water! Bring your camera to capture breath-taking moments that you'll never forget. Perfect for date nights or family events.</p>
+			<button class="button_white">Learn More</button>
+		</div>
+	</div>
+	<div class="shapeflex">
+		<div class="shapeflex_shape">
+			<img src="{{ url_for('static', filename='images/clip4.png') }}" class="clip" alt="Fishing rod bent by a fish">
+			<img data-src="{{ url_for('static', filename='images/daycations/dropaline.jpg') }}" class="bg lazys" alt="Fishing rod bent by a fish">
+		</div>
+		<div class="shapeflex_text">
+			<span class="title2">Drop A Line</span>
+			<p class="subheading">Fishing in the wonderful Lakes of Ontario, you never know what you may catch. Dinner anyone?! Grab a fishing pole, cast out and watch the day go by.</p>
+			<button class="button_white">Learn More</button>
+		</div>
+	</div>
+	<div class="shapeflex">
+		<div class="shapeflex_shape">
+			<img src="{{ url_for('static', filename='images/clip.png') }}" class="clip" alt="Stones stacked up making a wonderful sculpture">
+			<img data-src="{{ url_for('static', filename='images/daycations/massage.jpg') }}" class="bg lazys" alt="Stones stacked up making a wonderful sculpture">
+		</div>
+		<div class="shapeflex_text">
+			<span class="title2">Thai Massage</span>
+			<p class="subheading">Feeling a little beat down, or maybe a little beat up? Come join us on the beautiful Ontario waters and relax in a way that you've never experienced before. Our certified massage therapist will give you an authentic thai massage in the most serene environment possible, for an event that you have to experience to truly appreciate.</p>
+			<button class="button_white">Learn More</button>
+		</div>
+	</div>
+	<div class="shapeflex">
+		<div class="shapeflex_shape">
+			<img src="{{ url_for('static', filename='images/clip2.png') }}" class="clip" alt="Fingers holding down strings on a guitar">
+			<img data-src="{{ url_for('static', filename='images/daycations/blues.jpg') }}" class="bg lazys" alt="Fingers holding down strings on a guitar">
+		</div>
+		<div class="shapeflex_text">
+			<span class="title2">Blues And Cruise</span>
+			<p class="subheading">Imagine watching the beautiful sunset with live music. We look forward to partnering with talented musicians to bring you the blues while we cruise. Come join us for an experience thats a one of a kind</p>
+			<button class="button_white">Learn More</button>
+		</div>
+	</div>
+	<!-- <div class="shapeflex">
+		<div class="shapeflex_shape">
+			<img src="{{ url_for('static', filename='images/clip3.png') }}" class="clip">
+			<img src="{{ url_for('static', filename='images/daycations/brunch.png') }}" class="bg">
+		</div>
+		<div class="shapeflex_text">
+			<h4>Brunch On The Water</h4>
+			<p class="subheading">We'd ask if you enjoy brunch, but obviously you do, because who doesn't like brunch? So instead, let's talk about how we made brunch better; we put it on a boat. Hop aboard with some of your closest friends, or bring strangers, we don't care, and experience brunch in a more relaxing way than ever before. </p>
+			<button class="button_white">Learn More</button>
+		</div>
+	</div>
+	<div class="shapeflex">
+		<div class="shapeflex_shape">
+			<img src="{{ url_for('static', filename='images/clip2.png') }}" class="clip">
+			<img src="{{ url_for('static', filename='images/daycations/wine&dine.jpg') }}" class="bg">
+		</div>
+		<div class="shapeflex_text">
+			<h4>Wine & Dine</h4>
+			<p class="subheading">Are you ready for a romantic night out, the likes of which you've never had before? Come aboard, and experience the world-famous vineyards of Ontario like you've never done so before. Pair Ontario wines with Ontario landscapes, and experience Ontario in a way you never thought possible.</p>
+			<button class="button_white">Learn More</button>
+		</div>
+	</div> -->
+</div>
+<div class="pop_box">
+	<h2>Our Partners And Related Links</h2>
+	<p class="subheading">Check out the links below for our Partners and friends who helped us along the way.</p>
+	<div class="pop_cont">
+		<div class="pop_cont_text">
+			<h1>Be Kind Desserts By Brianna Lymburner</h1>
+			<p>Congratulations! That's right, you've just discovered the best tasting, best looking desserts in all of Ontario. Be Kind Desserts offers choice cakes, delicious brownies, excellent cookies and other fantastic features. You will always remember today as the day you learned about Brianna's Desserts, and you should get in touch with Be Kind Desserts to get a cake to celebrate this occasion.</p>
+			<a class="button_white" rel="noreferrer" href="https://www.bekinddesserts.com/" target="_blank">Visit Be Kind Desserts</a>
+		</div>
+		<div class="pop_cont_slideshow">
+			<div class="pop_cont_imgs">
+				<img data-src="{{ url_for('static', filename='/images/popouts/bekindpop.jpg') }}" alt="A gorgous wedding style cake with white icing and beautiful flowers" class="lazys">
+			</div>
+		</div>
+	</div>
+	<div class="pop_cont">
+		<div class="pop_cont_text">
+			<h1>Jim Casson</h1>
+			<p>Jim Casson is a professional drummer / percussionist / educator / producer / promoter / web and graphic designer / farmer / father /  husband.  When he grows up, he'll decide what he wants to do with his life.  Here on his web site you can find out where he's performing, who he's performed with, what CDs he's performed on, what he looks like when he performs, how you can get him to teach you how to play, what type of drums he plays on, and how to get in contact with him.</p>
+			<a class="button_white" href="http://jamesacasson.ca/jhc/casson.htm" target="_blank" rel="noreferrer">Visit Jim Casson</a>
+		</div>
+		<div class="pop_cont_slideshow">
+			<div class="pop_cont_imgs">
+				<img data-src="{{ url_for('static', filename='/images/jimcasson.jpg') }}" alt="Jim Casson sitting at a drumkit with both drumsticks in the air." class="lazys">
+			</div>
+		</div>
+	</div>
+	<div class="pop_cont">
+		<div class="pop_cont_text">
+			<h1>Brant Parker Blues Band</h1>
+			<p>The Brant Parker Blues Band has been playing pubs, bars and clubs in the Niagara Region for the past 4 years. Brant has a unique voice and a guitar style that is all his own. This, combined with a solid rhythm section, is what makes the Brant Parker Blues Band a multiple Niagara Music Awards winner and a nominee for a Maple Blues Award for Best New Act.</p>
+			<a class="button_white" href="https://brantparkerband.bandcamp.com/" target="_blank" rel="noreferrer">Visit Brant Parker</a>
+		</div>
+		<div class="pop_cont_slideshow">
+			<div class="pop_cont_imgs">
+				<img data-src="{{ url_for('static', filename='/images/brantparker1.jpg') }}" alt="Brant Parker playing a guitar." class="lazys">
+			</div>
+		</div>
+	</div>
+	<div class="pop_cont">
+		<div class="pop_cont_text">
+			<h1>James Anthony</h1>
+			<p>A natural musician at age 10, played Ontario Place at 15 and turned pro at 17. James' experience in the music industry is reminiscent of legendary players of the past. Playing, Singing, Song Writing with heart and honesty is what he does best and he will leave his audience with a feeling of complete musical satisfaction that is sure to propel James Anthony into the hearts of listeners and fans of the guitar everywhere.</p>
+			<a class="button_white" href="http://jamesanthony.ca" target="_blank" rel="noreferrer">Visit James Anthony</a>
+		</div>
+		<div class="pop_cont_slideshow">
+			<div class="pop_cont_imgs">
+				<img data-src="{{ url_for('static', filename='/images/brantparker.jpg') }}" alt="James Anthony playing guitar behind microphone." class="lazys">
+			</div>
+		</div>
+	</div>
+	<div class="pop_cont">
+		<div class="pop_cont_text">
+			<h1>Spencer Mackenzie</h1>
+			<p>‘New Artist of the Year’ Maple Blues Award winner, Spencer MacKenzie, has an insightful musical expression emerging from his body and the only explanation is an old soul residing within! He has a deep, soulful, true to the blues sound, with an electrifying twist that captivates his audience.</p>
+			<a class="button_white" href="https://www.spencermackenzie.ca" target="_blank" rel="noreferrer">Visit Spencer Mackenzie</a>
+		</div>
+		<div class="pop_cont_slideshow">
+			<div class="pop_cont_imgs">
+				<img data-src="{{ url_for('static', filename='/images/spencer.jpg') }}" alt="Spencer Mackenzie smiling while playing guitar behind microphone." class="lazys">
+			</div>
+		</div>
+	</div>
+	<!--<div class="pop_cont">
+		<div class="pop_cont_text">
+			<h1>Musician X</h1>
+			<p>Blues is a music genre and musical form which was originated in the Deep South of the United States around the 1860s by African-Americans from roots in African-American work songs, and spirituals. Blues incorporated spirituals, work songs, field hollers, shouts, chants, and rhymed simple narrative ballads.</p>
+			<a class="button_blue" href="https://www.youtube.com">Visit Musician X</a>
+		</div>
+		<div class="pop_cont_slideshow">
+			<div class="pop_cont_imgs">
+				<img data-src="{{ url_for('static', filename='/images/jazz.jpg') }}" alt="A man holding a marraca singing into a microphone" class="lazys">
+			</div>
+		</div>
+	</div>-->
+</div>
+<!--
+<div class="lifestyle">
+	<div class="lifestyle_cont">
+		<div class="iframe_cont">
+			<iframe width="80%" height="600" src="https://www.youtube.com/embed/q4wMq8u4-Ts" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<div class="subtext">
+			<p>This is a whole bunch of text that I'm only typing because I need to fill in a whole bunch of room, and I'm tyring to write this as quickly as possible, as to not waste time.</p>
+		</div>
+		<div class="lrg_radio">
+			<span class="lrg_button"></span>
+		</div>
+	</div>
+	<div class="lifestyle_others">
+		<div class="lifestyle_other">
+			<img src="{{ url_for('static', filename='/images/hero/hero.jpg') }}">
+			<h5>Here's a header</h5>
+			<p>And a paragraph to go with it.</p>
+		</div>
+	</div>
+</div>
+-->
+{% endblock %}

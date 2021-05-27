@@ -1,0 +1,22 @@
+function imageSlideshow(e) {
+	var current = e;
+	var y = document.getElementsByClassName("hero_image");
+	for (i=0; i < y.length; i++) {
+		y[i].className = "hero_image nonactive " + (i + 1).toString();
+	}
+	var x = document.getElementsByClassName(current.id)[0];
+	x.className = "hero_image active " + current.id.toString();
+	rad_list = document.getElementsByClassName("radio_button");
+	for (i=0; i < rad_list.length; i++) {
+		rad_list[i].className = "radio_button";
+	}
+	current.className = current.className + " radio_active";
+}
+function changeSlideshow() {
+	for (i=1; i <= list.length; i++) {
+		setTimeout(function() {
+			var list = document.getElementsByClassName("radio_button");
+			.click();
+		}, i * 5000);
+	}
+}

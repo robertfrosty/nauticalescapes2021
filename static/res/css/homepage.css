@@ -1,0 +1,372 @@
+body {
+	overflow-x: hidden;
+}
+
+.hero {
+	height: 100vh;
+	position: relative;
+	text-align: center;
+	background: #122449;
+}
+
+.hero img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	filter: opacity(0.4) grayscale(1);
+}
+
+.hero video {
+	object-fit: cover;
+}
+
+.pop_cont_imgs img {
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.text_cont {
+	margin: 1vw;
+	width: 42%;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	padding: 1vw;
+	border-radius: 10px;
+	background: rgba(18, 36, 73, 0.8);
+}
+.hero_text {
+	margin-top: 4vw;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	width: 80%;
+}
+
+.hero_text h2 {
+	font-size: 6vw;
+	width: 100%;
+	margin-bottom: 2vw;
+	color: #FFF;
+}
+
+.hero_text p {
+	font-size: 1.8vw;
+	color: #FFF;
+}
+
+.hero_text img {
+	filter: opacity(1);
+	height: 5vw;
+	width: 5vw;
+	cursor: pointer;
+	margin-top: 2vw;
+}
+
+.hero_text img:hover {
+	transform: scale(1.1);
+}
+
+.hero_radio {
+	position: absolute;
+	bottom: 20px;
+	width: 100%;
+}
+
+.hero_location {
+	position: absolute;
+	bottom: 16px;
+	left: 0;
+	text-align: left;
+	padding: 0.4vw 4vw;
+	white-space: nowrap;
+	font-size: 1.5vw;
+	color: #fff;
+}
+
+i {
+	text-decoration: underline;
+	font-style: normal;
+}
+
+.hero_info {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.daycations {
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	width: calc(100% - 8vw);
+	margin: 0vw 4vw;
+}
+
+.daycations h2 {
+	width: 100%;
+	font-size: 3vw;
+	color: #76A1C8;
+	margin-top: 6vw;
+	padding: 0.4vw;
+	color: #122449;
+}
+
+.daycations h4 {
+	width: 100%;
+	font-size: 1.4vw;
+	color: #BAB1BA;
+}
+
+.daycation {
+	border-radius: 10px;
+	background: #76A1C8;
+	text-align: center;
+	width: 31%;
+	margin: 2vw 1%;
+	padding: 1vw 0vw 2vw 0vw;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.daycation h2 {
+	font-size: 1.8vw;
+	color: #FFF;
+	padding: 0vw 0.4vw 1vw 0.4vw;
+	margin: 0;
+	width: calc(100% - 0.8vw);
+}
+
+.daycation h4 {
+	color: #FFF;
+}
+
+.daycation .main_img {
+	width: 15vw;
+	height: 15vw;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.daycation_flex {
+	display: flex;
+	justify-content: center;
+}
+
+.daycation_flex p {
+	width: 75%;
+	font-size: 0.8vw;
+	color: #FFF;
+	text-align: center;
+	margin: 1vw 1vw 2vw 1vw;
+}
+
+.daycation_info_cont {
+	width: 50%;
+	font-size: 0.8vw;
+	color: #BAB1BA;
+	text-align: center;
+	margin: 1vw 0.4vw;
+}
+
+.daycation_info {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.daycation_info_cont img {
+	width: 3vw;
+}
+
+.daycation_info_cont span {
+	width: 6vw;
+}
+
+.included {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	margin-bottom: 2vw;
+}
+
+.included_indiv {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.included_indiv img {
+	height: 40px;
+	width: auto;
+}
+
+.included_indiv span {
+	white-space: nowrap;
+}
+
+.our_adventures {
+	width: calc(100% - 8vw);
+	margin: 0vw 4vw;
+	text-align: center;
+}
+
+.our_adventures h2 {
+	font-size: 3vw;
+	color: #76A1C8;
+	margin-top: 6vw;
+	padding: 0.4vw;
+	color: #122449;
+}
+.our_adventures h3 {
+	text-align: center;
+	font-size: 2vw;
+	color: #122449;
+	margin: 1vw 0 0 0;
+}
+
+.our_adventure_info {
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+	margin-top: 2vw;
+}
+
+.our_adventure_imgs {
+	width: 50%;
+	text-align: center;
+}
+
+.our_adventure_info:nth-child(odd) > .our_adventure_imgs {
+	transform: scaleX(-1);
+}
+
+.our_adventure_imgs img {
+	width: 94%;
+	height: auto;
+	border: 2px solid #122449;
+	border-radius: 2px;
+	box-shadow: 0 0 0.75rem #000;
+	/*
+	border-radius: 70% 30% 30% 70% \ 60% 40% 60% 40%;
+	transition: border-radius 1s ease-out;
+	animation: morph 8s ease-in-out infinite both alternate;
+	overflow: hidden; 
+	*/
+}
+
+.our_adventure_info_text {
+	width: 50%;
+	text-align: center;
+}
+
+.our_adventure_info_text h2 {
+	font-size: 1.5vw;
+	color: #122449;
+	padding: 3vw 0vw 0vw 0vw;
+	margin: 0vw;
+}
+
+.our_adventure_info_text p {
+	font-size: 1vw;
+	color: #122449;
+	padding: 1vw 1vw;
+}
+
+.our_adventure_info:nth-child(odd) {
+	flex-direction: row-reverse;
+}
+
+.our_journey {
+	text-align: center;
+	margin: 2vw 4vw;
+}
+
+.our_journey h2 {
+	color: #122449;
+	margin: 2vw;
+}
+
+.our_journey p {
+	margin: 2vw 2vw;
+}
+
+#mapid {
+	height: 180px;
+	width: 100%;
+	z-index: 1;
+} 
+
+.our_journey_map_text h3 {
+	color: #122449;
+}
+
+.our_journey_map_text p {
+	margin-bottom: 2vw;
+}
+
+.invisible {
+	display: none;
+}
+/* Tablet */
+@media screen and (min-width:769px) and (max-width: 1024px) {
+	.hero_text h2 {
+		font-size: 4vw !important;
+	}
+	.hero_text p {
+		font-size: 1.6vw !important;
+	}
+}
+/* Mobile */
+@media screen and (min-width:214px) and (max-width: 768px) {
+	.slide, .slide-l {
+		position: static;
+	}
+	.hero_text h2 {
+		font-size: 4vw !important;
+	}
+	.hero_text p {
+		font-size: 2.4vw !important;
+	}
+	.hero_text img {
+		height: 12vw;
+		width: 6vw;
+	}
+	.text_cont {
+		width: 100%;
+	}
+	.pop_cont {
+		justify-content: center;
+		height: auto;
+	}
+	.pop_cont_imgs img {
+		height: 40vw;
+		object-position: top;
+	}
+	.pop_cont_slideshow {
+		width: 60%;
+	}
+	.pop_cont_text {
+		margin-top: 0vw;
+	}
+	.pop_cont_text p {
+		font-size: 2.4vw;
+	}
+	.daycations {
+		justify-content: center;
+	}
+	.daycation {
+		width: 55%;
+	}
+	.daycations h2, .pop_cont h2 {
+		font-size: 6vw;
+	}
+	.daycation h2 {
+		font-size: 4vw;
+	}
+	.daycations h4 {
+		font-size: 2.4vw;
+	}
+	.daycation_flex p {
+		font-size: 1.8vw;
+	}
+}

@@ -1,0 +1,323 @@
+.map {
+	width: 100%;
+	height: 100vh;
+	text-align: center;
+	background: #122449;
+	position: relative;
+}
+
+#mapid {
+	height: 100%;
+	filter: opacity(0.4) grayscale(1);
+}
+
+#hidemap {
+	position: absolute;
+	bottom: 4vw;
+	left: 50%;
+	transform: translate(-50%, 0);
+	z-index: 2;
+}
+
+.adventure_imgs img:nth-child(1) {
+	border-radius: 10px;
+}
+
+.adventure:last-child > .adventure_imgs img:nth-child(2) {
+	display: none;
+}
+
+.maptext {
+	width: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 2;
+	text-align: left;
+	height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin-top: 4vw;
+}
+
+.maptext div {
+	text-align: center;
+}
+
+.maptext h1 {
+	font-size: 6vw;
+	color: #FFF;
+	margin-bottom: 2vw;
+}
+
+.maptext p {
+	color: #FFF;
+	margin: 0vw 10vw;
+	font-size: 1.8vw;
+}
+
+.maptext button {
+	margin: 2vw 10vw;
+}
+
+.adventures h2 {
+	font-size: 4vw;
+	color: #122449;
+}
+
+.adventures p {
+	margin: 0vw 8vw 2vw 8vw;
+	font-size: 1.8vw;
+}
+
+.adventures .date {
+	font-size: 1.4vw;
+	color: #76A1C8;
+}
+
+.socicons {
+	margin-bottom: 2vw;
+}
+
+.socicons a {
+	font-size: 0;
+}
+
+.socicons img {
+	height: 2vw;
+	width: auto;
+	filter: brightness(0);
+	margin: 0vw 1vw;
+}
+
+.imagegrid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0 9vw 2vw 9vw;
+	height: 40%;
+}
+
+.imagegrid img {
+	height: 4vw;
+	width: 4vw;
+	object-fit: cover;
+	border-radius: 5px; 
+	margin: 0.4vw;
+	cursor: pointer;
+}
+
+.art1 {
+	width: 5vw;
+	left: 48vw;
+	top: 91vw;
+	transform: rotate(36deg);
+	position: absolute;
+}
+
+.art1 img {
+	width: 10vw;
+	height: auto;
+}
+
+.art2 {
+	width: 5vw;
+	left: 40vw;
+	top: 164vw;
+	transform: rotate(25deg);
+	position: absolute;
+}
+
+.art2 img {
+	width: 30vw;
+	height: auto;
+}
+
+.art3 {
+	width: 5vw;
+	left: 48vw;
+	top: 141vw;
+	transform: rotate(330deg);
+	position: absolute;
+}
+
+.art3 img {
+	width: 20vw;
+	height: auto;
+}
+
+.adventures {
+	margin: 4vw;
+	text-align: center;
+}
+
+.adventure {
+	margin: 3vw 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.adventure:nth-child(even) {
+	flex-direction: row-reverse;
+}
+
+.adventure .hr {
+	width:100%;
+	height: 5vw;
+	transform: rotate(36deg);
+	position: absolute;
+	top: 100%;
+	left: 85%;
+	z-index: -1;
+}
+
+.adventure:nth-child(even) > .adventure_imgs .hr {
+	transform: rotate(-36deg);
+	left: -60%;
+	top: 115%;
+}
+
+.adventure_imgs {
+	width: 40%;
+	position: relative;
+}
+
+.adventure_imgs img {
+	width: 40vw;
+	height: 40vw;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+.adventure_text {
+	width: 60%;
+	overflow: hidden;
+}
+
+.adventure_text h1 {
+	color: #122449;
+	font-size: 3vw;
+	margin-bottom: 2vw;
+	margin: 0 auto;
+	width: 60%;
+}
+
+.adventure_text p {
+	height: 16vw;
+	overflow-y: auto;
+}
+
+.social {
+	width: 100%;
+	text-align: center;
+}
+
+.social_info {
+	margin: 3vw;
+}
+
+.social_info h1 {
+	color: #122449;
+}
+
+.social_info h2 {
+	color: #122449;
+}
+
+.social_info p {
+	margin-top: 1vw;
+	color: #122449;
+}
+
+.social_icons {
+	width: 40vw;
+	margin-left: 29.5vw;
+	background: #122449;
+}
+
+.social_icons img {
+	height: 5vw;
+	width: 5vw;
+	padding: 2vw;
+}
+/* Wide */
+@media screen and (min-width: 1025px) {
+	.adventure_text {
+		padding-top: 4vw;
+	}
+}
+
+/* Tablet */
+@media screen and (min-width:769px) and (max-width: 1024px) {
+	.maptext h2 {
+		font-size: 8vw !important;
+	}
+	.maptext p {
+		font-size: 2.8vw !important;
+	}
+	.maptext button {
+		font-size: 2vw !important;
+	}
+	.adventure_text h1 {
+		font-size: 3vw;
+	}
+	.adventure_text p {
+		font-size: 1.7vw !important;
+	}
+}
+/* Mobile */
+@media screen and (min-width:214px) and (max-width: 768px) {
+	.maptext h2 {
+		font-size: 10vw !important;
+	}
+	.maptext p {
+		font-size: 2.8vw !important;
+	}
+	.maptext button {
+		font-size: 3vw !important;
+	}
+	#hidemap {
+		font-size: 3vw !important;
+	}
+	.imagegrid img {
+		height: 6vw;
+		width: 6vw;
+	}
+	.adventures p {
+		font-size: 2.7vw;
+	}
+	.adventure {
+		position: relative !important;
+		padding: 3vw 0vw;
+		margin: 2vw 0vw 25vw 0vw !important;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2) !important;	
+		background: #fff !important;
+		height: 80vw;
+	}
+	.adventure_imgs {
+		width: 100% !important;
+	}
+	.adventure_imgs img {
+		width: 25vw !important;
+		height: 25vw !important;
+	}
+	.adventure .hr {
+		width: 44vw !important;
+		height: 7vw !important;
+		transform: rotate(270deg) !important;
+		top: 262% !important;
+		left: 26% !important;
+		z-index: -1 !important;
+	}
+	.adventure_text {
+		width: 100% !important;
+	}
+	.adventure_text h1 {
+		font-size: 4vw !important;
+	}
+	.adventure_text p {
+		font-size: 2.7vw !important;
+	}
+}

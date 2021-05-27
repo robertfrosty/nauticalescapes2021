@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	        <link rel="stylesheet" href="{{ url_for('static', filename='/res/css/login.css') }}">
+        	<link rel="stylesheet" href="{{ url_for('static', filename='/res/css/navbar.css') }}">
+        	<link rel="stylesheet" href="{{ url_for('static', filename='/res/css/main.css') }}">
+        	<link rel="stylesheet" href="{{ url_for('static', filename='/res/css/footer.css') }}">
+		<title>Nautical Escapes | Login Page | Best Boats</title>
+	</head>
+	<body>
+		<div class="content" style="background-image: url( {{ url_for('static', filename='images/hero/hero1.jpg') }});">
+			<form action="/login" method="POST" class="login_form">
+				<h2>Welcome</h2>
+				<input type="text" id="username" name="username" placeholder="Enter Username">
+				<input type="password" id="password" name="password" placeholder="Enter Password">
+				<input type="submit" class="button_blue">
+			</form>
+		</div>
+	</body>
+</html>

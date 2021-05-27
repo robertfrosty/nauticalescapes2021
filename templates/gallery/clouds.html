@@ -1,0 +1,95 @@
+{% extends "temp.html" %}
+{% block css_title %}mediat{% endblock %}
+{% block title %} {{mediat["header"]}} {% endblock %}
+{% block description %}Nautical Escapes 2021 Clouds Gallery Page{% endblock %}
+{% block other_scripts %}
+<link rel="stylesheet" href="{{ url_for('static', filename='res/css/hero.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='res/css/photopile.css') }}">
+<script src="{{ url_for('static', filename='res/js/sitemap.js') }}"></script>
+<script src="{{ url_for('static', filename='res/js/lcs_ig.js') }}"></script>
+<script src="{{ url_for('static', filename='res/js/media.js') }}"></script>
+<script src="{{ url_for('static', filename='res/js/photopile.js') }}"></script>
+<script src="{{ url_for('static', filename='res/js/dragscroll.js') }}"></script>
+{% endblock %}
+{% block hard_check %}{% include "navbar_hard.html" %}{% endblock %}
+{% block onload %}onload="loadCustomSelect()"{% endblock %}
+{% block content %}
+<div class="contact_hero">
+	<img src="{{ url_for('static', filename='images/media/') }}{{ mediat['header'] }}/{{ mediat['content'][0] }}" alt="Fluffy dark clouds with wind turbines in the distance">
+	<div class="contact_hero_info">
+		<h2 style="text-transform: capitalize;">{{ mediat["header"] }}</h2>
+		<div class="info_box">
+			<p>Water & the sky! When we are cruising these are the two common sights for us. We love photography and some of the skys we've seen have been breathtaking.</p>
+		</div>
+	</div>
+</div>
+<div class="content">
+	<div class="infobox_cont">
+		<div class="infobox">
+			<div class="infobox_text">
+				<h2>Our Favourites</h2>
+				<p>These are a few of our favourite pictures we have taken of the sky over the years we have been cruising.</p>
+			</div>
+			<div class="infobox_slideshow">
+				<div class="polar">
+					<img src="{{ url_for('static', filename='images/media/clouds/longpoint.jpg') }}" alt="Beautiful orange sunset over clear skies and still water">
+					<span><i>Gorgeous</i></span>
+				</div>
+				<div class="polar">
+					<img src="{{ url_for('static', filename='images/media/clouds/panama.jpg') }}" alt="Catamaran under dark pillow-like clouds">
+					<span><i>Stormy</i></span>
+				</div>
+				<div class="polar">
+					<img src="{{ url_for('static', filename='images/media/clouds/tanker.jpg') }}" alt="Tanker in a canal">
+					<span><i>Long Boat!</i></span>
+				</div>
+			</div>
+		</div>
+		<div class="infobox">
+			<div class="infobox_text">
+				<h2>Stormy Weather</h2>
+				<p>We have seen and lived through some wicked storms. The clouds and lightning can be exhilarating. We've even been able to capture a lightning strike.</p>
+			</div>
+			<div class="infobox_slideshow">
+				<div class="polar">
+					<img src="{{ url_for('static', filename='images/media/clouds/lightning.jpg') }}" alt="Black clouds with a lightning strike in the distance.">
+					<span><i>Dark Clouds</i></span>
+				</div>
+				<div class="polar">
+					<img src="{{ url_for('static', filename='images/media/clouds/niceclouds.jpg') }}" alt="Beautiful golden sunset over a marina with lots of boats">
+					<span><i>Puffy Clouds</i></span>
+				</div>
+				<div class="polar">
+					<img src="{{ url_for('static', filename='images/media/clouds/godclouds.jpg') }}" alt="Blue skies with sun shiny, but a storm cloud is off in the distance">
+					<span><i>Perfect Day</i></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="images">
+		<h2>All Images</h2>
+		<p class="subheading">Check out all of our images below, and if you just can't get enough of the fantastic {{ mediat['header'] }} pictures, follow us on Instagram, Facebook, and subscribe to our Youtube Channel.</p>
+		<!--
+		 <button onclick="rimages()" class="button_white">Images Only</button>
+		<button onclick="rgifs()" class="button_white">Gifs Only</button>
+		-->
+		<div class="image_slides" id="image_slides">
+		{% for item in mediat["content"] %}
+			<div class="slidebox">
+				<img class="trgimg lazys" src="{{ url_for('static', filename='images/fallback.png') }}" data-src="{{ url_for('static', filename='images/media/') }}{{ mediat['header'] }}/{{item}}" onclick="imgfs(this)" id="{{ loop.index }}" alt="{{ mediat['header'] }}">
+				<img src="{{ url_for('static', filename='images/icons/x-icons/whitex.png') }}" class="icon_cont invisible">
+			</div>
+		{% endfor %}
+		</div>
+		<div class="blownup_nav" onmousemove="hovScroll(event.clientX)" onmouseleave="stopProp()">
+			{% for item in mediat["content"] %}
+				<img data-src="{{ url_for('static', filename='images/media/') }}{{ mediat['header'] }}/{{item}}" onclick="both(document.getElementById({{loop.index}}))">
+			{% endfor %}
+		</div>
+	</div>
+	<div class="video_cont">
+	</div>
+	<div class="other_videos">
+	</div>
+</div>
+{% endblock %}

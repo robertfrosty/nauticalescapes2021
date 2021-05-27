@@ -1,0 +1,156 @@
+{% extends "temp.html" %}
+{% block title %} Our Adventure {% endblock %}
+{% block css_title %}adventure{% endblock %}
+{% block js_title %}adventure{% endblock %}
+{% block other_scripts %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+<script rel="preload" as="script" src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+{% endblock %}
+{% block hard_check %}{% include "navbar_hard.html" %}{% endblock %}
+{% block onload %}onload= "loadCustomSelect()"{% endblock %}
+{% block content %}
+<div class="map">
+	<div id="mapid"></div>
+	<div class="maptext">
+		<div class="">
+			<h1>Our Adventure</h1>
+			<p class="subheading">Our motto for travelling and living aboard is "Go to new places, meet new people, and try new things." We love going to a new place, dropping anchor, exploring the area for good kayaking and fishing spots, and going to shore to find some live music. Along the way we have been to some really cool places, met some really nice people, and taken lots of pictures along the way. We would love to bring you along for the journey, wherever it may take us. Check out the map and click around to explore the timeline of our adventure.</p>
+			<button class="button_blue" onclick="explore(this)">Explore The Map</button>
+		</div>
+	</div>
+	<button class="button_white nonactive" id="hidemap" onclick="hideMap(this)">Hide Map</button>
+</div>
+<div class="adventures">
+	<h2>Places We've Been</h2>
+	<p class="subheading">Check out below to see some of the places that we've been and some of the things that we've done. Feel free to check out the map, (above), as well to see our adventure visualized.</p>
+	{% for advent in advents %}
+	<div class="adventure" id="{{ loop.index }}">
+		<div class="adventure_imgs">
+			<img data-src="{{ url_for('static', filename='images/advents/')}}{{advent[3]['dir']}}/{{advent[3]['files'][0]}}" id="changeme_{{ advent[1] }}" class="lazys" alt="">
+			<img data-src="{{ url_for('static', filename='images/line.png')}}" class="hr lazys" alt="Dashed, curved line">
+		</div>
+		<div class="adventure_text">
+			<h1>{{ advent[7] }}</h1>
+			<!-- <p class="date">{{ advent[1] }}</p> -->
+			<p class="textswap">{{ advent[10] }}</p>
+			<div class="imagegrid nonactive">
+				{% for item in advent[3]['files'] %}
+				<img data-src="{{ url_for('static', filename='images/advents/')}}{{advent[3]['dir']}}/{{item}}" onclick="document.getElementById('changeme_{{advent[1]}}').src=this.src" class="lazyo">
+				{% endfor %}
+			</div>
+			<div class="socicons">
+				<a href="{{ advent[4] }}"><img src="{{ url_for('static', filename='images/icons/youtube.png') }}">Youtube</a>
+				<a href="{{ advent[5] }}"><img src="{{ url_for('static', filename='images/icons/instagram.png') }}">Instagram</a>
+				<a href="{{ advent[6] }}"><img src="{{ url_for('static', filename='images/icons/twitch.png') }}">Twitch</a>
+			</div>
+			<button class="button_white" onclick="textswap(this)">See Images</button>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+<script>
+var scrolld = false;
+document.addEventListener("scroll", function() {
+	if (!scrolld) {
+		var lsi = document.getElementsByClassName("adventure");
+
+		if (lsi[lsi.length - 1].offsetTop <= scrollY + window.innerHeight) {
+			scrolld = true;
+			// Ajax call to load more 'adventures'
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					lsi2 = JSON.parse(xhttp.responseText);
+					for (i=0; i < lsi2.length; i++) {
+						var dv = document.createElement("DIV");
+						dv.className = "adventure";
+						dv.id = lsi.length + i + 1;
+						var dv2 = document.createElement("DIV");
+						dv2.className = "adventure_imgs";
+						img1 = document.createElement("IMG");
+						img1.src = "{{ url_for('static', filename='images/advents/')}}" + lsi2[i][3]['dir'] + "/" + lsi2[i][3]['files'][0];
+						img1.id = "changeme_" + lsi2[i][3]['dir'];
+						img1.className = "fade-in";
+						img1.alt = "";
+						var img2 = document.createElement("IMG");
+						img2.src = "{{ url_for('static', filename='images/line.png')}}";
+						img2.className = "hr fade-in";
+						img2.alt = "Dashed, curved line";
+						dv2.appendChild(img1);
+						dv2.appendChild(img2);
+						dv.appendChild(dv2);
+						var dv3 = document.createElement("DIV");
+						dv3.className = "adventure_text";
+						var head1 = document.createElement("H1");
+						head1.innerHTML = lsi2[i][7];
+						var p1 = document.createElement("P");
+						p1.className = "textswap";
+						p1.innerHTML = lsi2[i][10];
+						var dv4 = document.createElement("DIV");
+						dv4.className = "imagegrid nonactive";
+						var dv5 = document.createElement("DIV");
+						dv5.className = "socicons";
+						var a1 = document.createElement("A");
+						a1.href = lsi2[i][4];
+						var img3 = document.createElement("IMG");
+						img3.src = "{{ url_for('static', filename='images/icons/youtube.png') }}";
+						a1.appendChild(img3);
+						a1.innerHTML = a1.innerHTML + "Youtube";
+						var a2 = document.createElement("A");
+						a2.href = lsi2[i][5];
+						a2.innerText = "Instagram";
+						var img4 = document.createElement("IMG");
+						img4.src = "{{ url_for('static', filename='images/icons/instagram.png') }}";
+						a2.appendChild(img4);
+						var a3 = document.createElement("A");
+						a3.href = lsi2[i][6];
+						a3.innerText = "Twitch";
+						var img5 = document.createElement("IMG");
+						img5.src = "{{ url_for('static', filename='images/icons/twitch.png') }}";
+						a3.appendChild(img5);
+						dv5.appendChild(a1);
+						dv5.appendChild(a2);
+						dv5.appendChild(a3);
+						var btnn = document.createElement("BUTTON");
+						btnn.className = "button_white";
+						btnn.innerHTML = "See Images";
+						btnn.addEventListener("click", function() { textswap(this) });
+						dv3.appendChild(head1);
+						dv3.appendChild(p1);
+						dv3.appendChild(dv4);
+						dv3.appendChild(dv5);
+						dv3.appendChild(btnn);
+						dv.appendChild(dv3);
+						document.getElementsByClassName("adventures")[0].appendChild(dv);
+						scrolld = false;
+					}
+				}
+			}
+			xhttp.open("POST", "/ouradventure_load");
+			xhttp.send(JSON.stringify(document.getElementsByClassName("adventure").length));
+		}
+	}
+});
+</script>
+<script>
+var map = L.map('mapid', {tap:false}).setView([43.142679, -81.073882], 8);
+
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+	attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+	maxZoom: 15,
+	id: 'mapbox/streets-v11',
+	tileSize: 512,
+	zoomOffset: -1,
+	accessToken: 'pk.eyJ1Ijoicm9iZXJ0ZnJvc3R5IiwiYSI6ImNra3p1YTM4NjBheDEyb3FvMHA3d3BobnMifQ.D7UuEqXTKzF90Qp-aOyaZw'
+}).addTo(map);
+
+map.zoomControl.remove();
+
+L.control.zoom({position:'bottomright'}).addTo(map);
+
+{% for advent in pins %}
+L.marker([{{advent[8]}},{{advent[9]}}]).addTo(map)
+	.bindPopup('<h2>{{advent[7]}}</h2>{{advent[10]}}<br><button class="button_white" style="padding: 0.2vw 1w; font-size: 0.6vw;" onclick="loadAllAdvents({{loop.index}})">Go To Adventure</button>');
+{% endfor %}
+</script>
+{% endblock %}

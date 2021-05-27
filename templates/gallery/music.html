@@ -1,0 +1,115 @@
+{% extends "temp.html" %}
+{% block css_title %}mediat{% endblock %}
+{% block title %} {{mediat["header"]}} {% endblock %}
+{% block description %}Nautical Escapes 2021 Music Gallery Page{% endblock %}
+{% block other_scripts %}
+<link rel="stylesheet" href="{{ url_for('static', filename='res/css/hero.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='res/css/photopile.css') }}">
+<script src="{{ url_for('static', filename='res/js/sitemap.js') }}"></script>
+<script src="{{ url_for('static', filename='res/js/lcs_ig.js') }}"></script>
+<script src="{{ url_for('static', filename='res/js/media.js') }}"></script>
+<script src="{{ url_for('static', filename='res/js/photopile.js') }}"></script>
+<script src="{{ url_for('static', filename='res/js/dragscroll.js') }}"></script>
+{% endblock %}
+{% block hard_check %}{% include "navbar_hard.html" %}{% endblock %}
+{% block onload %}onload="loadCustomSelect()"{% endblock %}
+{% block content %}
+<div class="contact_hero">
+	<img src="{{ url_for('static', filename='images/media/') }}{{ mediat['header'] }}/{{ mediat['content'][0] }}" alt="Jazz musicians playing on stage">
+	<div class="contact_hero_info">
+		<h2 style="text-transform: capitalize;">{{ mediat["header"] }}</h2>
+		<div class="info_box">
+			<p>Music is such a big part of our lives, It compliments our daily routines and our R&R time. Cruising is so much better with tunes!</p>
+		</div>
+	</div>
+</div>
+<div class="content">
+	<div class="infobox_cont">
+		<div class="infobox">
+			<div class="infobox_text">
+				<h2>Our Favourites</h2>
+				<p>We love all music, but "The Blues" is our favourite. You will always find some genre playing on our boat.</p>
+			</div>
+			<div class="infobox_slideshow">
+				<div class="polar">
+					<img src="{{ url_for('static', filename='images/media/music/music11.jpg') }}" alt="2 guitar players on stage">
+					<span><i>Late Night</i></span>
+				</div>
+				<div class="polar">
+					<img src="{{ url_for('static', filename='images/media/music/music2.jpg') }}" alt="5 guitar players on stage">
+					<span><i>Groovy</i></span>
+				</div>
+				<div class="polar">
+					<img src="{{ url_for('static', filename='images/media/music/3IMG_2748.jpg') }}" alt="Band plays on stage with blue and white lights">
+					<span><i>Great Show!</i></span>
+				</div>
+			</div>
+		</div>
+		<div class="infobox">
+			<div class="infobox_text">
+				<h2>Friendly Musicians</h2>
+				<p>On our adventures we've come across some very talented musicians. Some of them have been on our boat playing a live set while we were in the Parade Of Lights at Canal Days in Port Colborne, Ontario. Our hope is to someday include them into our "Daycation" cruises.</p>
+			</div>
+			<div class="infobox_slideshow">
+				<div class="polar">
+					<img src="{{ url_for('static', filename='images/media/music/5IMG_3076.jpg') }}"  alt="Band playing in a bar">
+					<span><i>Food And Dance</i></span>
+				</div>
+				<div class="polar">
+					<img src="{{ url_for('static', filename='images/media/music/music1.jpg') }}"  alt="Lynn and Brian posing in front of a band playing">
+					<span><i>Backstage Pass</i></span>
+				</div>
+				<div class="polar">
+					<img src="{{ url_for('static', filename='images/media/music/220180805_202941.JPG') }}" alt="Band playing on the front of a boat">
+					<span><i>On The Boat!</i></span>
+				</div>
+			</div>
+		</div>
+		<div class="infobox">
+			<div class="infobox_text">
+				<h2>Supporting Our Friends</h2>
+				<p>Worth a gander! Eh! Use social media to checkout these amazing musicians. Support these artists. Go to our Daycations page under Partners and Related links to find out more.</p>
+			</div>
+			<div class="infobox_slideshow">
+				<div class="polar">
+					<img src="{{ url_for('static', filename='images/media/music/4IMG_2793.jpg') }}"  alt="Band taking bows after concert">
+					<span><i>The Band</i></span>
+				</div>
+				<div class="polar">
+					<img src="{{ url_for('static', filename='images/media/music/1IMG_2308.jpg') }}" alt="Band playing on stage with blue lights">
+					<span><i>The Man</i></span>
+				</div>
+				<div class="polar">
+					<img src="{{ url_for('static', filename='images/media/music/2IMG_2317.jpg') }}" alt="Band playing on stage with green and yellow lights">
+					<span><i>What A Crowd!</i></span>
+				</div>
+			</div>
+		</div>		
+	</div>
+	<div class="images">
+		<h2>All Images</h2>
+		<p class="subheading">Check out all of our images below, and if you just can't get enough of the fantastic {{ mediat['header'] }} pictures, follow us on Instagram, Facebook, and subscribe to our Youtube Channel.</p>
+		<!--
+		<button onclick="rimages()" class="button_white">Images Only</button>
+		<button onclick="rgifs()" class="button_white">Gifs Only</button>
+		-->
+		<div class="image_slides" id="image_slides">
+		{% for item in mediat["content"] %}
+			<div class="slidebox">
+				<img class="trgimg lazys" src="{{ url_for('static', filename='images/fallback.png') }}" data-src="{{ url_for('static', filename='images/media/') }}{{ mediat['header'] }}/{{item}}" onclick="imgfs(this)" id="{{ loop.index }}" alt="{{ mediat['header'] }}">
+				<img src="{{ url_for('static', filename='images/icons/x-icons/whitex.png') }}" class="icon_cont invisible">
+			</div>
+		{% endfor %}
+		</div>
+		<div class="blownup_nav" onmousemove="hovScroll(event.clientX)" onmouseleave="stopProp()">
+			{% for item in mediat["content"] %}
+				<img data-src="{{ url_for('static', filename='images/media/') }}{{ mediat['header'] }}/{{item}}" onclick="both(document.getElementById({{loop.index}}))">
+			{% endfor %}
+		</div>
+	</div>
+	<div class="video_cont">
+	</div>
+	<div class="other_videos">
+	</div>
+</div>
+{% endblock %}

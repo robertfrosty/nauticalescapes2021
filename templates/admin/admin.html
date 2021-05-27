@@ -1,0 +1,124 @@
+{% extends "temp.html" %}
+{% block css_title %}admin{% endblock %}
+{% block title %} Admin {% endblock %}
+{% block js_title %}admin{% endblock %}
+{% block other_scripts %}
+
+{% endblock %}
+{% block hard_check %}{% include "navbar_hard.html" %}{% endblock %}
+{% block upload %}{% include "upload_boatpics()" %}{% endblock %}
+{% block onload %}onload="loadCustomSelect()"{% endblock %}
+{% block content %}
+<div class="admin_title">
+	<h1>Admin Control</h1>
+	<p class="subheading">This is a subheading</p>
+</div>
+<div class="eventboard">
+	<div class="mb">
+		<h1>Message Board</h1>
+		<div class="msg_cont">
+			{% for message in messages %}
+			<div class="messagediv">
+				<img src="{{ url_for('static', filename='images/hero/hero1.jpg') }}">
+				<div class="datename">
+					<span class="name">{{ message[1] }}</span>
+					<span class="date">{{ message[2] }}</span>
+				</div>
+				<p>{{ message[3] }}</p>
+			</div>
+			{% endfor %}
+		</div>
+		<form action="/admin_msg" method="post">
+			<input type="text" placeholder="Enter Message Here" name="message">
+			<input type="submit" class="button_white">
+		</form>
+	</div>
+	<div class="emerg">
+		<h1>Emergencies</h1>
+		<div class="eme_cont">
+			{% for message in emergencies %}
+			<div class="emergdiv">
+				<img src="{{ url_for('static', filename='images/hero/hero1.jpg') }}">
+				<div class="edatename">
+					<span class="ename">{{ message[1] }}</span>
+					<span class="edate">{{ message[2] }}</span>
+				</div>
+				<p>{{ message[3] }}</p>
+			</div>
+			{% endfor %}
+		</div>
+		<form action="/admin_eme" method="post">
+			<input type="text" placeholder="Enter Message Here" name="message">
+			<input type="submit" class="button_white">
+		</form>
+	</div>
+</div>
+<div class="upload">
+	<div class="text">
+		<h1>Upload Your Pictures</h1>
+		<p>Click on the button below to upload your pictures</p>
+		<p>Keep in mind, the photos will be uploaded directly to the site</p>
+	</div>
+	<form action="/admin" method="post" enctype="multipart/form-data">
+		<div class="form">
+			<span class="plus" onclick="loadCreate(this)">+</span>
+			<span class="form_title">Upload File(s)</span>
+		</div>
+		<input type="file" class="nonactive" id="clickme">
+		<select name="location">
+			<option value="boats">Boats</option>
+			<option value="clouds">Clouds</option>
+			<option value="sunsets">Sunsets</option>
+			<option value="crew">Crew</option>
+			<option value="music">Music</option>
+			<option value="flags">Flags</option>
+		</select>
+		<input type="submit" class="button_blue">
+	</form>
+</div>
+<div class="addadventure">
+	<h2>Submit An Adventure</h2>
+	<p class="subheading">Fill out the information below, and double-check that it is correct before clicking submit to add the information to the 'Our Adventures' page.</p>
+	<form action="/addadventure" method="post" enctype="multipart/form-data">
+		<label for="">Location</label>
+		<input type="text" name="location" class="ainput" id="loc">
+		<label for="">Description</label>
+		<textarea name="description" class="ainput" id="descr" resize="none"></textarea>
+		<label for="date" placeholder="YYYY-MM-DD">Date</label>
+		<input type="date" name="date" class="ainput" id="date">
+		<div class="multi-image">
+			<span class="lbl">Images</span>
+			<p class="subheading">Click on the button below to add one or more images to this <b>Adventure</b>.</p>
+			<span class="plus" onclick="loadCreate(this)">+</span>
+			<input type="file" name="files" class="nonactive" id="clickme">
+		</div>
+		<!-- Social Media Links -->
+		<label for="youtube">Youtube</label>
+		<input type="text" name="youtube" class="ainput" id="youtube">
+		<label for="instagram">Instagram</label>
+		<input type="text" name="instagram" class="ainput" id="instagram">
+		<label for="youtube">Facebook</label>
+		<input type="text" name="facebook" class="ainput" id="facebook">
+
+		<input type="hidden" name="lat" id="lat">
+		<input type="hidden" name="long" id="long">
+
+		<script>
+		function getLocation() {
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(showPosition);
+			} else {
+				console.log("No");
+			}
+		}
+		function showPosition(position) {
+			document.getElementById("lat").value = position.coords.latitude;
+			document.getElementById("long").value = position.coords.longitude;
+		}
+		getLocation();
+		</script>
+
+		<input type="submit" class="button_white">
+	</form>
+</div>
+{% endblock %}

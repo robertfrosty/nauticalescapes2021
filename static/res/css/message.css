@@ -1,0 +1,68 @@
+.contact_hero_info {
+	text-align: left;
+}
+.content {
+}
+.content h2 {
+	text-align: center;
+	font-size: 4vw;
+	color: #122449;
+	width: 100%;
+}
+
+.content p {
+	text-align: center;
+	width: 100%;
+	margin-bottom: 2vw;
+}
+
+.content form {
+	display: block;
+	border-radius: 5px;
+	margin: 4vw auto;
+	width: 76%;
+	padding: 1vw 2vw;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	background: #FFF;
+	z-index: 2;
+}
+
+.content .subheading {
+	color: #76A1C8;
+}
+
+.content label {
+	color: #122449;
+	font-size: 2vw;
+	font-weight: bold;
+}
+
+.content input[type="text"], .content input[type="email"], .content textarea {
+	margin: 1vw 0vw;
+	padding: 0.6vw 1vw;
+	font-size: 1.2vw;
+	width: 96%;
+	border-radius: 10px;
+	outline: none;
+	border: 2px solid #122449;
+}
+
+.content input[type="submit"] {
+	margin: 1vw 0vw;
+	font-size: 1.2vw;
+	padding: 0.6vw 0vw;
+	width: 100%;
+}
+/*Tablet*/
+@media screen and (min-width:769px) and (max-width: 1024px) {
+
+}
+/*Mobile*/
+@media screen and (min-width:214px) and (max-width: 768px) {
+	.content label{
+		font-size: 2.5vw;
+	}
+	.content input[type="text"], .content input[type="email"], .content textarea {
+		font-size: 2.3vw;
+	}
+}

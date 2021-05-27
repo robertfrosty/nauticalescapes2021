@@ -1,0 +1,120 @@
+{% extends "temp.html" %}
+{% block title %}Booking{% endblock %}
+{% block description %}Nautical Escapes 2021 Request A Quote{% endblock %}
+{% block css_title %}booking{% endblock %}
+{% block js_title %}booking{% endblock %}
+{% block onload %}onload="loadCustomSelect()"{% endblock %}
+{% block hard_check %}{% include "navbar_hard.html" %}{% endblock %}
+{% block content %}
+{% include "const.html" %}
+<div class="contact_hero">
+	<img src="/static/images/mini/book.jpg" alt="Photo of an open book, with glasses on it.">
+	<div class="contact_hero_info">
+		<h2>Request A Quote</h2>
+		<div class="info_box">
+			<p>Looking for more information about us, and our services? You've come to the right place; here you can find links to our social media pages, a contact form, any of our certifications and licenses and much more. In the event that you are looking for information which is not listed here, please use the contact form to get in touch with us.</p>
+		</div>
+	</div>
+</div>
+<div class="content">
+	<h2>Request A Quote</h2>
+	<p class="subheading">Please fill out all the information that is required on the form below, and we will respond once we recieve your message. All inquiries will be responded to.</p>
+	<form action="/contact/booking" method="POST">
+	<div class="booking" id="1">
+		<span class="title4">Booking Information</span>
+		<div class="book_select">
+			<div class="bs_indiv">
+				<span style="background: #122449;"></span>
+				<p>Booking</p>
+			</div>
+			<div class="bs_indiv">
+				<span></span>
+				<p>Contact</p>
+			</div>
+			<div class="bs_indiv">
+				<span></span>
+				<p>Confirm</p>
+			</div>
+		</div>
+		<label>Daycation Type</label>
+		<div class="custom_select">
+			<select>
+				<option>Daycation Type</option>
+				{% for daycation in daycations %}
+				<option>{{ daycation.name }}</option>
+				{% endfor %}
+			</select>
+		</div>
+		<br>
+		<label for="date">Daycation Date</label>
+		<input type="date" class="linput" id="date" name="date">
+		<label for="occupants">Occupants</label>
+		<input type="number" class="linput" id="occupants" name="occupants">
+		<label for="ammenities">Amenities</label>
+		<input type="text" class="linput" id="ammenities" name="ammenities">
+		<button type="button" class="button_white" onclick="nextBook(this.parentElement.id)">Next</button>
+	</div>
+	<div class="booking nonactive" id="2">
+		<h4>Contact Information</h4>
+		<div class="book_select">
+			<div class="bs_indiv">
+				<span></span>
+				<p>Booking</p>
+			</div>
+			<div class="bs_indiv">
+				<span style="background: #122449;"></span>
+				<p>Contact</p>
+			</div>
+			<div class="bs_indiv">
+				<span></span>
+				<p>Confirm</p>
+			</div>
+		</div>
+		<label for="name">Full Name</label>
+		<input type="text" class="linput" id="name" placeholder="John Johnson" name="fullname">
+		<label for="">Mobile</label>
+		<input type="tel" class="linput" id="mobile" placeholder="000-000-0000" name="mobile">
+		<label for="">Email</label>
+		<input type="email" class="linput" id="email" placeholder="example@default.com" name="email">
+		<label for="descr">Additional Information</label>
+		<textarea class="linput" id="descr" placeholder="Allergies, Concerns, Special Requests, Etc." name="descr"></textarea>
+		<button type="button" class="button_white" onclick="backBook(this.parentElement.id)">Back</button>
+		<button type="button" class="button_white" onclick="nextBook(this.parentElement.id)">Next</button>
+	</div>
+	<div class="booking nonactive" id="3">
+		<h4>Information Confirmation</h4>
+		<div class="book_select">
+			<div class="bs_indiv">
+				<span></span>
+				<p>Booking</p>
+			</div>
+			<div class="bs_indiv">
+				<span></span>
+				<p>Contact</p>
+			</div>
+			<div class="bs_indiv">
+				<span style="background: #122449;"></span>
+				<p>Confirm</p>
+			</div>
+		</div>
+		<h4>Confirm Information</h4>
+		<p class="subheading">Please ensure that all the information that you have entered up until this point is correct before submitting the form.</p>
+		<div class="confirm_book">
+			<h4>Booking Information</h4>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+		</div>
+		<div class="confirm_contact">
+			<h4>Contact Information</h4>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+		</div>
+		<button class="button_white" style="width:100%;">Submit</button>
+	</div>
+	</form>
+</div>
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends "temp.html" %}
+{% block css_title %}mediat{% endblock %}
+{% block title %} {{mediat["header"]}} {% endblock %}
+{% block js_title %}mediat{% endblock %}
+{% block other_scripts %}
+<link rel="stylesheet" href="{{ url_for('static', filename='res/css/hero.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='res/css/photopile.css') }}">
+<script src="{{ url_for('static', filename='res/js/sitemap.js') }}"></script>
+<script src="{{ url_for('static', filename='res/js/lcs_ig.js') }}"></script>
+<script src="{{ url_for('static', filename='res/js/media.js') }}"></script>
+<script src="{{ url_for('static', filename='res/js/photopile.js') }}"></script>
+<script src="{{ url_for('static', filename='res/js/dragscroll.js') }}"></script>
+{% endblock %}
+{% block hard_check %}{% include "navbar_hard.html" %}{% endblock %}
+{% block onload %}onload="loadCustomSelect()"{% endblock %}
+{% block content %}
+<div class="contact_hero">
+	<img src="{{ url_for('static', filename='images/media/') }}{{ mediat['header'] }}/{{ mediat['content'][0] }}">
+	<div class="contact_hero_info">
+		<h2 style="text-transform: capitalize;">{{ mediat["header"] }}</h2>
+		<div class="info_box">
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
+		</div>
+	</div>
+</div>
+<div class="content">
+	<h1>Our {{ mediat["header"] }}</h1>
+	<p>Some generic Text</p>
+	<div class="infobox_cont">
+		<div class="infobox">
+			<div class="infobox_text">
+				<h2>Some Title</h2>
+				<p>This is a really long piece of text. I'm just going to really ramble off some stuff here, and I'm just going to keep typing and ignoring typos, even though this is ridiculous, I need to write a really long sentence and this is faster than copy and pastibg on theis computer.</p>
+			</div>
+			<div class="infobox_slideshow">
+				<div class="polar">
+					<img src="{{ url_for('static', filename='images/hero/hero1.jpg') }}">
+					<span><i>Image</i></span>
+				</div>
+				<div class="polar">
+					<img src="{{ url_for('static', filename='images/hero/hero1.jpg') }}">
+					<span><i>Image</i></span>
+				</div>
+				<div class="polar">
+					<img src="{{ url_for('static', filename='images/hero/hero1.jpg') }}">
+					<span><i>Image</i></span>
+				</div>
+			</div>
+		</div>
+		<div class="infobox">
+			<div class="infobox_text">
+				<h2>Some Title</h2>
+				<p>This is a really long piece of text. I'm just going to really ramble off some stuff here, and I'm just going to keep typing and ignoring typos, even though this is ridiculous, I need to write a really long sentence and this is faster than copy and pastibg on theis computer.</p>
+			</div>
+			<div class="infobox_slideshow">
+				<div class="polar">
+					<img src="{{ url_for('static', filename='images/hero/hero1.jpg') }}">
+					<span><i>Image</i></span>
+				</div>
+				<div class="polar">
+					<img src="{{ url_for('static', filename='images/hero/hero1.jpg') }}">
+					<span><i>Image</i></span>
+				</div>
+				<div class="polar">
+					<img src="{{ url_for('static', filename='images/hero/hero1.jpg') }}">
+					<span><i>Image</i></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="images">
+		<h2>All Images</h2>
+		<p class="subheading">Check out all of our images below, and if you just can't get enough of our fantastic {{ mediat['header'] }} pictures, then check out our social media, like Instagram, Twitch, Youtube and more.</p>
+		<button onclick="rimages()" class="button_white">Images Only</button>
+		<button onclick="rgifs()" class="button_white">Gifs Only</button>
+		<div class="image_slides" id="image_slides">
+		{% for item in mediat["content"] %}
+			<div class="slidebox">
+				<img class="trgimg" src="{{ url_for('static', filename='images/media/') }}{{ mediat['header'] }}/{{item}}" onclick="imgfs(this)" id="{{ loop.index }}">
+				<img src="{{ url_for('static', filename='images/icons/x-icons/whitex.png') }}" class="icon_cont invisible">
+			</div>
+		{% endfor %}
+		</div>
+		<div class="blownup_nav" onmousemove="hovScroll(event.clientX)" onmouseleave="stopProp()">
+			{% for item in mediat["content"] %}
+				<img src="{{ url_for('static', filename='images/media/') }}{{ mediat['header'] }}/{{item}}" onclick="both(document.getElementById({{loop.index}}))">
+			{% endfor %}
+		</div>
+	</div>
+	<div class="video_cont">
+	</div>
+	<div class="other_videos">
+	</div>
+</div>
+{% endblock %}
