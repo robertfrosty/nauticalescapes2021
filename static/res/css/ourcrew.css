@@ -8,7 +8,6 @@
 	color: #122449;
 }
 .content p {
-	font-size: 1.6vw;
 	width: calc(100% - 1.6vw);
 	text-align: center;
 	margin: 0vw 0.8vw 4vw 0.8vw;
@@ -17,6 +16,7 @@
 	margin: 2vw 0vw;
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
 }
 .favs {
 	border-radius: 5px;
@@ -27,14 +27,16 @@
 	text-align: center;
 	box-shadow: inset 0 0 6px #666;
 }
-.favs h1 {
+.favs .title4 {
 	color: #FFF;
-}
-.favs b {
-	color: #76A1C8;
 }
 .favs p {
 	margin-bottom: 0vw;
+	font-size: 2vmax;
+}
+.favs b {
+	font-size: 2vmax;
+	color: #76A1C8;
 }
 .pers {
 	border-radius: 5px;
@@ -48,24 +50,21 @@
 .pers .mimg {
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	background: #122449;
-	height: 20vw;
-	width: 20vw;
+	height: 30vmin;
+	width: 30vmin;
 	object-fit: cover;
 	border-radius: 50%;
 }
 .pers .title4 {
-	font-size: 3vw;
 	color: #FFF;
 }
 .pers .role {
 	color: #76A1C8;
-	font-size: 2.5vw;
 }
 .pers p {
 	margin: 1vw 0vw;
-	font-size: 2vw;
+	font-size: 2vmax;
 	color: #BAB1BA;
-	height: 22vw;
 }
 .infotext {
 	width: 75%;
@@ -74,10 +73,10 @@
 	margin: 0 auto;
 }
 .pers .infotext img {
-	width: 4vw;
+	width: 4vmax;
 }
 .pers .infotext p {
-	margin: 0;
+	margin: 0 1vmax;
 	width: 100%;
 	color: #76A1C8;
 	height: auto;
@@ -111,7 +110,12 @@
 }
 
 @media screen and (min-width: 214px) and (max-width: 768px) {
-	.pers p {
-		height: 50vw;
+	.pers {
+		margin: 2vmax 2vw;
+		width: calc(80% - 12vw - 4px);
+	}
+	.favs {
+		width: calc(80% - 12vw - 4px);
+		margin: 0 auto;
 	}
 }

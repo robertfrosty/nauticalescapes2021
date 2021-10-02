@@ -49,11 +49,6 @@ body {
 	color: #FFF;
 }
 
-.hero_text p {
-	font-size: 1.8vw;
-	color: #FFF;
-}
-
 .hero_text img {
 	filter: opacity(1);
 	height: 5vw;
@@ -104,8 +99,7 @@ i {
 }
 
 .daycations h2 {
-	width: 100%;
-	font-size: 3vw;
+	width: 100%;gV/NJ4eME$5e,?ZU
 	color: #76A1C8;
 	margin-top: 6vw;
 	padding: 0.4vw;
@@ -114,7 +108,7 @@ i {
 
 .daycations h4 {
 	width: 100%;
-	font-size: 1.4vw;
+	margin: 0 15vmax;
 	color: #BAB1BA;
 }
 
@@ -122,14 +116,13 @@ i {
 	border-radius: 10px;
 	background: #76A1C8;
 	text-align: center;
-	width: 31%;
+	width: 48%;
 	margin: 2vw 1%;
 	padding: 1vw 0vw 2vw 0vw;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
 .daycation h2 {
-	font-size: 1.8vw;
 	color: #FFF;
 	padding: 0vw 0.4vw 1vw 0.4vw;
 	margin: 0;
@@ -141,8 +134,8 @@ i {
 }
 
 .daycation .main_img {
-	width: 15vw;
-	height: 15vw;
+	width: 15vmax;
+	height: 15vmax;
 	border-radius: 50%;
 	object-fit: cover;
 }
@@ -154,10 +147,11 @@ i {
 
 .daycation_flex p {
 	width: 75%;
-	font-size: 0.8vw;
 	color: #FFF;
 	text-align: center;
 	margin: 1vw 1vw 2vw 1vw;
+	min-height: 30vw
+;
 }
 
 .daycation_info_cont {
@@ -324,9 +318,6 @@ i {
 	.hero_text h2 {
 		font-size: 4vw !important;
 	}
-	.hero_text p {
-		font-size: 2.4vw !important;
-	}
 	.hero_text img {
 		height: 12vw;
 		width: 6vw;
@@ -347,9 +338,10 @@ i {
 	}
 	.pop_cont_text {
 		margin-top: 0vw;
+		width: 80%;
 	}
 	.pop_cont_text p {
-		font-size: 2.4vw;
+		font-size: 2.4vmax;
 	}
 	.daycations {
 		justify-content: center;
@@ -358,15 +350,13 @@ i {
 		width: 55%;
 	}
 	.daycations h2, .pop_cont h2 {
-		font-size: 6vw;
+		font-size: 6vmax;
 	}
 	.daycation h2 {
-		font-size: 4vw;
 	}
 	.daycations h4 {
-		font-size: 2.4vw;
 	}
 	.daycation_flex p {
-		font-size: 1.8vw;
+		min-height: revert;		
 	}
 }

@@ -12,33 +12,52 @@ body {
 }
 
 .content h2 {
-	font-size: 4vw;
 	color: #122449;
 }
 
 .content .subheading {
-	font-size: 1.8vw;
 	width: calc(100% - 32vw);
 	text-align: center;
-	margin: 0vw 16vw;
+	margin: 0vw auto;
+}
+
+.booking .subheading {
+	width: calc(100% - 4vmax);
+}
+
+.booking .button_white {
+	margin-top: 2vmax;
+}
+
+.content .select_items {
+	margin-top: 2px;
+	border: 2px solid #122449;
+	border-radius: 10px;
+}
+
+.content .select_items div:nth-child(1) {
+	border-radius: 10px 10px 0 0;
+}
+
+.content .select_items div:nth-child(even) {
+	background: #EEEEEE;
 }
 
 .content .select_selected, .content .select_items div {
 	margin: 0vw;
 	width: 100%;
 	background: #FFF;
-	border: 2px solid #122449;
-	border-radius: 10px;
 	color: #122449;
 }
 
 .content .select_selected {
-	margin: 1vw 0vw 0vw 0vw;
-	font-size: 1.2vw;
+	margin: 1vmax 0vw 0vw 0vw;
+	font-size: 1.2vmax;
 	justify-content: flex-start;
-	padding: 1vw 0vw 1vw 0.6vw;
-	height: 1.2vw;
-	width: calc(100% - 1vw);
+	padding: 1vmax 0vw 1vmax 0.6vmax;
+	height: 1.2vmax;
+	width: calc(100% - 1vmax);
+	border: 2px solid #122449;
 }
 
 .content .select_selected:after {
@@ -54,10 +73,10 @@ body {
 }
 
 .linput {
-	margin: 1vw 0vw;
-	padding: 0.6vw 1vw;
-	font-size: 1.2vw;
-	width: calc(100% - 2vw - 4px);
+	margin: 1vmax 0vw;
+	padding: 0.6vmax 1vmax;
+	font-size: 1.2vmax;
+	width: calc(100% - 2vmax - 4px);
 	border-radius: 10px;
 	outline: none;
 	border: 2px solid #122449;
@@ -74,15 +93,14 @@ body {
 	z-index: 2;
 }
 
-.booking .title4 {
+.booking .title4, .booking .title5, .booking .title6 {
 	margin: 2vw 0vw;
 	color: #122449;
-	font-size: 2.4vw;
 	text-align: center;
 }
 
 .booking label {
-	font-size: 1.6vw;
+	font-size: 2vmax;
 	color: #122449;
 }
 
@@ -98,8 +116,8 @@ body {
 }
 
 .bs_indiv span {
-	height: 2vw;
-	width: 2vw;
+	height: 2vmax;
+	width: 2vmax;
 	border-radius: 50%;
 	display: block;
 	border: 0.4vw solid #122449;
@@ -110,8 +128,8 @@ body {
 
 .bs_indiv p {
 	color: #122449;
-	font-size: 2vw;
-	margin-left: -1.5vw;
+	font-size: 2vmax;
+	margin-left: -1.5vmax;
 }
 
 .bs_indiv:nth-last-child(1n+2) span::before {
@@ -119,8 +137,26 @@ body {
 	z-index: -1;
 	content: '';
 	top: 50%;
-	left: 2.1vw;
-	height: 0.4vw;
+	left: 2.1vmax;
+	height: 0.4vmax;
 	width: 18vw;
 	background: #122449;
+}
+
+.confirm_book p, .confirm_contact p {
+	text-align: center;
+	font-size: 1.4vmax;
+}
+
+.confirm_book p b, .confirm_contact p b {
+	color: #76A1C8;
+}
+ .confirm_overflow {
+	overflow-y: scroll;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+.confirm_overflow::-webkit-scrollbar {
+	width: 0;
+	height: 0;
 }

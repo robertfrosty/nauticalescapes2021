@@ -5,3 +5,6 @@
 	<button class="button_black" onclick="this.parentElement.classList.toggle('nonactive'); document.body.style.overflow = 'auto';">Continue</button>
 	<img src="/static/images/uc.png" alt="Black and yellow construction tape">
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {console.log(history.scrollRestoration);if('scrollRestoration' in history){history.scrollRestoration = 'manual'; window.scrollTo(0,0);}});
+</script>

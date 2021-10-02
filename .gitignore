@@ -1,12 +1,15 @@
 #Ignore Files With Secret Keys
 charterboats.py
 
+#Ignore Mail Files Until It Is Cleaned Up ;)
+main.py
+
 #ignore Log Files
 app.log
 
 #Ignore VirtualEnv Packages And PyCache
 charterboatsenv/
-__pyache__/
+__pycache__/
 
 #Instead Provide requirements.txt
 !charterboatsenv/requirements.txt

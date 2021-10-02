@@ -9,8 +9,8 @@
 	position: relative;
 }
 .arrows {
-	width: 5vw;
-	height: 5vw;
+	width: 5vmax;
+	height: 5vmax;
 	filter: brightness(0);
 	position: absolute;
 	bottom: 5px;
@@ -19,8 +19,8 @@
 	cursor: pointer;
 }
 .arrows:hover {
-	height: 5.5vw;
-	width: 5.5vw;
+	height: 5.5vmax;
+	width: 5.5vmax;
 }
 .boat_cont h1 {
 	font-size: 5vw;
@@ -31,6 +31,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	margin: 6vw;
+	justify-content: center;
 }
 .boat_prof:nth-child(odd) {
 	flex-direction: row-reverse;
@@ -38,9 +39,12 @@
 .boat_prof:nth-child(odd) > .prof_info .info {
 	flex-direction: row-reverse;
 }
-.boat_prof img {
-	width: 40vw;
-	height: 40vw;
+.boat_prof:last-child {
+	margin-bottom: 10vmax;
+}
+.boat_prof .bimg {
+	width: 40vmax;
+	height: 40vmax;
 	border-radius: 50%;
 	object-fit: cover;
 	border: 4px solid #122449;
@@ -58,7 +62,7 @@
 .prof_title p {
 	text-align: center;
 	color: #000;
-	font-size: 1.4vw;
+	font-size: 2vmax;
 }
 .prof_info {
 	width: 100%;
@@ -70,16 +74,17 @@
 	margin-left: 5vw;
 }
 .info img {
-	width: 10vw;
-	height: 10vw;
+	width: 10vmax;
+	height: 10vmax;
 	object-fit: cover;
 	border-radius: 5px;
 	border: none;
 	margin: 4vw 10vw;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 .info p {
 	width: 50%;
-	font-size: 1.6vw;
+	font-size: 1.6vmax;
 	color: #000;
 }
 .inv {
@@ -92,7 +97,7 @@
 }
 .inv p {
 	text-align: center;
-	font-size: 1.4vw;
+	font-size: 2.6vmax;
 }
 .inv_cont {
 	display: flex;
@@ -107,6 +112,7 @@
 
 .img_cont img {
 	width: 80%;
+	height: 100%;
 	object-fit: cover;
 	margin: 0 auto;
 	display: block;
@@ -122,5 +128,21 @@
 	font-size: 2vw;
 }
 .text_cont p {
-	font-size: 1.4vw;
+	font-size: 1.6vmax;
+}
+.title5 {
+	color: #122449;
+}
+/* Mobile  & Tablet*/
+@media screen and (max-width: 920px) {
+	.boat_prof .bimg {
+		width: 100%;
+		height: 88vw;
+		flex-shrink: 0;
+		margin-left: 0;
+
+	}
+	.prof_title {
+		width: 100%;
+	}
 }

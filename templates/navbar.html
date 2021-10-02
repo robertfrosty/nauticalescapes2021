@@ -24,18 +24,22 @@
 			<h2>Nautical Escapes</h2>
 		</a>
 		<div class="anc_cont nonactive">
-			<a class="anc" href="{{ url_for('main.homepage') }}">Home</a>
-			<div class="bb"></div>
-			<a class="anc" href="{{ url_for('main.ouradventure') }}">Our Adventure</a>
-			<div class="bb"></div>
-			<a class="anc" href="{{ url_for('main.daycations') }}">Daycations</a>
-			<div class="bb"></div>
-			<a class="anc" href="{{ url_for('main.media') }}">Gallery</a>
-			<div class="bb"></div>
-			<a class="anc" href="{{ url_for('main.contactus') }}">Contact</a>
-			<div class="bb"></div>
-			<a class="anc" href="{{ url_for('main.booking') }}">Request A Quote</a>
-			<div class="bb"></div>
+			<div class="anc_cont_mobi_rel">
+				<div class="anc_cont_mobi_abs">
+					<a class="anc" href="{{ url_for('main.homepage') }}">Home</a>
+					<div class="bb"></div>
+					<a class="anc" href="{{ url_for('main.ouradventure') }}">Our Adventure</a>
+					<div class="bb"></div>
+					<a class="anc" href="{{ url_for('main.daycations') }}">Daycations</a>
+					<div class="bb"></div>
+					<a class="anc" href="{{ url_for('main.media') }}">Gallery</a>
+					<div class="bb"></div>
+					<a class="anc" href="{{ url_for('main.contactus') }}">Contact</a>
+					<div class="bb"></div>
+					<a class="anc" href="{{ url_for('main.booking') }}">Request A Quote</a>
+					<div class="bb"></div>
+				</div>
+			</div>
 		</div>
 		<!--<script>
 			if (window.innerWidth < 800) {
@@ -75,5 +79,13 @@
 		<input type="hidden" name="charter_amen" id="hidden_amen">
 		<input type="submit" value="Book Now" onclick="changeSlideshow()" class="button" disabled>
 		</form>
+	</div>
+	<div class="weather_applet">
+		<span class="title5">Recently Spotted</span>
+		<div class="">
+			<img alt="Picture of the current weather" src="{{ weat }}">
+			<span class="watemp title6">{{ temp }}&#176;c</span>
+			<span class="walocation title6">{{ latlong }}<span>
+		</div>
 	</div>
 </div>

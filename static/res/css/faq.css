@@ -9,7 +9,6 @@
 }
 
 .content p {
-	font-size: 1.6vw;
 	width: calc(100% - 1.6vw);
 	text-align: center;
 	margin: 0vw 0.8vw 4vw 0.8vw;
@@ -20,12 +19,6 @@
 	background: #EEE;
 	border-radius: 5px;
 	box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.2);
-}
-
-.title4 {
-	font-weight: bold;
-	margin: 0.4vw;
-	display: block;
 }
 
 .question {
@@ -54,14 +47,8 @@
 	margin: 0.4vw 4vw;
 }
 
-.question .title4 {
-	font-size: 3vw;
-	color: #122449;
-	padding-top: 1vw;
-}
-
 .question p {
-	font-size: 1.4vw;
+	font-size: 1.6vmax;
 	color: #FFF;
 	text-align: left;
 	margin-bottom: 2vw;
@@ -92,13 +79,12 @@
 }
 
 .answer .title4 {
-	font-size: 3vw;
+	text-align: left;
 	color: #76A1C8;
-	padding-top: 1vw;
 }
 
 .answer p {
-	font-size: 1.4vw;
+	font-size: 1.6vmax;
 	color: #FFF;
 	text-align: left;
 	width: calc(100% - 8vw);

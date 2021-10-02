@@ -95,15 +95,16 @@
 		</div>
 	</div>
 	<!--
+	***Taken out at request of client until they are ready to advertise their business more.***
 	<div class="daycations">
-		<h2>Our Daycations</h2>
-		<h4>Here's some more information about daycations, in general.</h4>
+		<h2 class="title4">Our Daycations</h2>
+		<h4 class="title5">Here's some more information about daycations, in general.</h4>
 		{% for daycation in daycations %}
 		<div class="daycation">
-			<h2>{{ daycation.name }}</h2>
+			<h2 class="title4">{{ daycation.name }}</h2>
 			<img src="{{ url_for('static', filename='images/daycations/') }}{{ daycation.img }}" class="main_img">
 			<div class="daycation_flex">
-				<p>{{ daycation.text1 }}</p>
+				<p class="subheading">{{ daycation.text1 }}</p>
 			</div>
 			<a class="button_blue" href="{{ url_for('main.daycations') }}">Learn More</a>
 		</div>

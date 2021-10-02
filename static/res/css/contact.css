@@ -12,11 +12,12 @@
 .option {
 	text-align: center;
 	margin: 1vw;
-	padding: 4.8vw 0.8vw;
-	width: calc(25% - 4vw);
+	padding: 4.8vmax 0.8vw;
+	width: calc(33% - 4vw);
 	background: #76A1C8;
 	border-radius: 5px;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	position: relative;
 }
 
 .option img {
@@ -28,10 +29,8 @@
 	object-fit: cover;
 }
 
-.option h2 {
-	width: 100%;
-	text-align: center;
-	color: #122449;
+.minh .option h2 {
+	min-height: 15vmin;
 }
 
 .mini_hero {
@@ -53,21 +52,27 @@
 	display: flex;
 	flex-wrap: wrap;
 }
-.content h1 {
+.content .title1 {
 	text-align: center;
-	font-size: 3vw;
 	color: #122449;
 	width: 100%;
 }
 
 .content .subheading {
 	text-align: center;
-	margin-bottom: 2vw;
+	margin-bottom: 2vmax;
 }
 
 .option .subheading {
-	height: 9vw;
 	color: #FFF;
+	padding: 2vmax;
+}
+
+.option .button_blue {
+	position: absolute;
+	bottom: 2.4vmax;
+	left: 50%;
+	transform: translate(-50%, 0);
 }
 
 .contact_form {
@@ -225,6 +230,12 @@ input[type="submit"]:hover {
 	text-align: center;
 	font-size: 1.2vw;
 	color: #122449;
+}
+/* Desktop || Monitor */
+@media screen and (min-width: 1325px) {
+	.minh .option h2 {
+		min-height: 25vmin;
+	}
 }
 /* Tablet */
 @media screen and (min-width:769px) and (max-width: 1024px) {

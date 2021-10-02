@@ -30,8 +30,8 @@ function both(param) {
 }
 
 function test(event) {
-	if(document.getElementsByClassName("blownup")[0]){
-		if((event.clientX < document.getElementsByClassName("blownup")[0].children[0].getBoundingClientRect().left || event.clientX > document.getElementsByClassName("blownup")[0].children[0].getBoundingClientRect().right) || (event.clientY > document.getElementsByClassName("blownup")[0].getBoundingClientRect().top || event.clientY > document.getElementsByClassName("blownup")[0].getBoundingClientRect().bottom)) {
+	if(document.getElementsByClassName("imageviewer_cont")[0]){
+		if((event.clientX < document.getElementsByClassName("imageviewer_cont")[0].children[0].getBoundingClientRect().left || event.clientX > document.getElementsByClassName("imageviewer_cont")[0].children[0].getBoundingClientRect().right) || (event.clientY > document.getElementsByClassName("imageviewer_cont")[0].getBoundingClientRect().top || event.clientY > document.getElementsByClassName("imageviewer_cont")[0].getBoundingClientRect().bottom)) {
 			imgfs_out();
 		}
 	}
@@ -39,19 +39,24 @@ function test(event) {
 
 
 function imgfs(e) {
+	let imgviewer = document.getElementsByClassName("imageviewer")[0];
+	imgviewer.parentElement.style.display = 'block';
+	let newimg = document.createElement("IMG");
+	newimg.className = "imgv";
+	newimg.src = e.src;
+	if(imgviewer.children.length > 1){
+		imgviewer.removeChild(imgviewer.children[0]);
+	}
+	imgviewer.append(newimg);
+
 	var parent = e.parentElement;
-	parent.className = "blownup";
+	//parent.className = "blownup";
 
 	var nav = document.getElementsByClassName("blownup_nav")[0];
 
-	e.style.width = "50%";
-	e.style.height = "75%";
+	imgviewer.appendChild(nav);
 
-	var childs = parent.children;
-
-	parent.appendChild(nav);
-
-	var li = childs[2].children;
+	var li = nav.children;
 
 	for(i=0; i < li.length; i ++) {
 		li[i].src = li[i].dataset.src;
@@ -66,12 +71,11 @@ function imgfs(e) {
 	nav.style.display = "block";
 	nav.children[e.id - 1].classList.add("nav_active");
 
-	/*nav.scrollLeft = nav.children[e.id - 1].getBoundingClientRect().right - e.getBoundingClientRect().right + 500;*/
+	nav.scrollLeft = -1*(document.getElementsByClassName("blownup_nav")[0].children[0].getBoundingClientRect().left - document.getElementsByClassName("blownup_nav")[0].children[e.id - 1].getBoundingClientRect().left);
 
-	childs[1].classList.remove("invisible");
-	childs[2].classList.remove("invisible");
+	var targ = document.getElementsByClassName("icon_cont")[0];
 
-	var targ = childs[1];
+	targ.classList.remove('invisible');
 
 	targ.addEventListener("click", function() { imgfs_out() });
 	event.stopPropagation();
@@ -79,28 +83,19 @@ function imgfs(e) {
 }
 
 function imgfs_out() {
-	if(document.getElementsByClassName("blownup")[0]) {
-	var parent = document.getElementsByClassName("blownup")[0];
-	parent.className = "slidebox";
-
-	childs = parent.children;
-
-	childs[0].style.width = "100%";
-	childs[0].style.height = "100%";
-
-	var nav = document.getElementsByClassName("blownup_nav")[0];
-	nav.style.display = "none";
-
-	childs[1].classList.add("invisible");
-	childs[2].classList.add("invisible");
-
-	document.getElementsByClassName("nav_active")[0].classList.remove("nav_active");
+	let imgviewer = document.getElementsByClassName("imageviewer")[0];
+	imgviewer.parentElement.style.display = 'none';
+	if(document.getElementsByClassName("nav_active").length > 0) {
+		document.getElementsByClassName("nav_active")[0].classList.remove("nav_active");
 	}
 }
 
+let lastnum = null;
+
 function right(rect, num) {
+	lastnum = num;
 	if (rect.right - num <= 20) {
-		document.getElementsByClassName("blownup")[0].children[2].scrollLeft = document.getElementsByClassName("blownup")[0].children[2].scrollLeft + 4;
+		document.getElementsByClassName("blownup_nav")[0].scrollLeft += 4;
 		var i = setTimeout(function() {
 			hovScroll(num);
 		},100);
@@ -109,7 +104,7 @@ function right(rect, num) {
 
 function left(rect, num) {
 	if (num - rect.left <= 20) {
-		document.getElementsByClassName("blownup")[0].children[2].scrollLeft = document.getElementsByClassName("blownup")[0].children[2].scrollLeft - 4;
+		document.getElementsByClassName("blownup_nav")[0].scrollLeft -= 4;
 		setTimeout(function() {
 			hovScroll(num);
 		}, 100);
@@ -117,13 +112,13 @@ function left(rect, num) {
 }
 
 function hovScroll(num) {
-	var rect = document.getElementsByClassName("blownup")[0].children[0].getBoundingClientRect();
+	var rect = document.getElementsByClassName("blownup_nav")[0].getBoundingClientRect();
 	right(rect, num);
 	left(rect, num);
+	lastnum = num;
 }
 
 function stopProp() {
-	console.log("hit");
 	var highT = setTimeout(";");
 	for (i=0; i < highT; i++) {
 		clearInterval(i);

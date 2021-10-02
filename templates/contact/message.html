@@ -20,15 +20,17 @@
 <div class="content">
 	<img src="{{ url_for('static', filename='images/turtle.gif') }}" class="fishies" alt="Animation of cartoon turtle swimming behind the web-content.">
 	<form action="/contact/sendamessage" method="POST">
-		<h2>Contact Us</h2>
-		<p class="subheading">Please fill out all the fields in the form below to send us a message, and start a converstaion.</p>
-		<label for="name">Full Name</label>
-		<input type="text" name="fullname" id="name">
-		<label for="email">Email Address</label>
-		<input type="email" name="email" id="email">
-		<label for="message">Your Message</label>
-		<textarea name="message" rows="8"style="resize: none;" id="message"></textarea>
-		<input type="submit" value="Send" class="button">
+		<div class="formcontainer">
+			<h2 class="title4">Contact Us</h2>
+			<p class="subheading">Please fill out all the fields in the form below to send us a message, and start a converstaion.</p>
+			<label for="name">Full Name</label>
+			<input type="text" name="fullname" id="name">
+			<label for="email">Email Address</label>
+			<input type="email" name="email" id="email">
+			<label for="message">Your Message</label>
+			<textarea name="message" rows="8"style="resize: none;" id="message"></textarea>
+			<input type="submit" value="Send" class="button">
+		</div>
 	</form>
 </div>
 {% endblock %}

@@ -21,7 +21,7 @@
 	<button class="button_white nonactive" id="hidemap" onclick="hideMap(this)">Hide Map</button>
 </div>
 <div class="adventures">
-	<h2>Places We've Been</h2>
+	<h2 class="title4">Places We've Been</h2>
 	<p class="subheading">Check out below to see some of the places that we've been and some of the things that we've done. Feel free to check out the map, (above), as well to see our adventure visualized.</p>
 	{% for advent in advents %}
 	<div class="adventure" id="{{ loop.index }}">
@@ -30,7 +30,7 @@
 			<img data-src="{{ url_for('static', filename='images/line.png')}}" class="hr lazys" alt="Dashed, curved line">
 		</div>
 		<div class="adventure_text">
-			<h1>{{ advent[7] }}</h1>
+			<h2>{{ advent[7] }}</h2>
 			<!-- <p class="date">{{ advent[1] }}</p> -->
 			<p class="textswap">{{ advent[10] }}</p>
 			<div class="imagegrid nonactive">
@@ -53,18 +53,19 @@ var scrolld = false;
 document.addEventListener("scroll", function() {
 	if (!scrolld) {
 		var lsi = document.getElementsByClassName("adventure");
-
 		if (lsi[lsi.length - 1].offsetTop <= scrollY + window.innerHeight) {
 			scrolld = true;
 			// Ajax call to load more 'adventures'
 			var xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function() {
 				if (this.readyState == 4 && this.status == 200) {
-					lsi2 = JSON.parse(xhttp.responseText);
-					for (i=0; i < lsi2.length; i++) {
+					let lsi2 = JSON.parse(xhttp.responseText);
+					console.log(lsi2);
+					var statll = lsi.length + 1;
+					for (let i=0; i < lsi2.length; i++) {
 						var dv = document.createElement("DIV");
 						dv.className = "adventure";
-						dv.id = lsi.length + i + 1;
+						dv.id = statll + i;
 						var dv2 = document.createElement("DIV");
 						dv2.className = "adventure_imgs";
 						img1 = document.createElement("IMG");
@@ -81,13 +82,21 @@ document.addEventListener("scroll", function() {
 						dv.appendChild(dv2);
 						var dv3 = document.createElement("DIV");
 						dv3.className = "adventure_text";
-						var head1 = document.createElement("H1");
+						var head1 = document.createElement("H2");
 						head1.innerHTML = lsi2[i][7];
 						var p1 = document.createElement("P");
 						p1.className = "textswap";
 						p1.innerHTML = lsi2[i][10];
 						var dv4 = document.createElement("DIV");
 						dv4.className = "imagegrid nonactive";
+						for(let imgl = 0; imgl < lsi2[i][3]['files'].length;imgl++){
+							var devconst = document.createElement('IMG');
+							devconst.setAttribute('data-src', "{{ url_for('static', filename='images/advents/')}}" + lsi2[i][3]['dir'] + "/" + lsi2[i][3]['files'][imgl]);
+							devconst.class = "lazyo fade-in";
+							console.log('changeme_' + new Date(lsi2[i][1]).toISOString().split("T")[0]);
+							devconst.addEventListener('click', (e) => {console.log(lsi2);document.getElementById('changeme_' + new Date(lsi2[i][1]).toISOString().split("T")[0]).src=e.target.src});
+							dv4.append(devconst);
+						}
 						var dv5 = document.createElement("DIV");
 						dv5.className = "socicons";
 						var a1 = document.createElement("A");

@@ -5,7 +5,6 @@
 }
 .content h2 {
 	text-align: center;
-	font-size: 4vw;
 	color: #122449;
 	width: 100%;
 }
@@ -27,30 +26,35 @@
 	z-index: 2;
 }
 
+.content form .formcontainer {
+	margin: 1vmax;
+}
+
 .content .subheading {
 	color: #76A1C8;
 }
 
 .content label {
 	color: #122449;
-	font-size: 2vw;
+	font-size: 2vmax;
 	font-weight: bold;
 }
 
 .content input[type="text"], .content input[type="email"], .content textarea {
-	margin: 1vw 0vw;
-	padding: 0.6vw 1vw;
-	font-size: 1.2vw;
-	width: 96%;
+	display: block;
+	margin: 1vmax 0vw;
+	padding: 0.6vw 1vmax;
+	font-size: 1.2vmax;
+	width: calc(100% - 2vmax - 4px);
 	border-radius: 10px;
 	outline: none;
 	border: 2px solid #122449;
 }
 
 .content input[type="submit"] {
-	margin: 1vw 0vw;
-	font-size: 1.2vw;
-	padding: 0.6vw 0vw;
+	margin: 1vmax 0;
+	font-size: 1.2vmax;
+	padding: 0.6vmax 0;
 	width: 100%;
 }
 /*Tablet*/
@@ -60,9 +64,7 @@
 /*Mobile*/
 @media screen and (min-width:214px) and (max-width: 768px) {
 	.content label{
-		font-size: 2.5vw;
 	}
 	.content input[type="text"], .content input[type="email"], .content textarea {
-		font-size: 2.3vw;
 	}
 }

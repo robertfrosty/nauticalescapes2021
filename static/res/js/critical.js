@@ -13,12 +13,16 @@ document.addEventListener("DOMContentLoaded", function() {
 			var scrollTop = window.pageYOffset;
 			lazyloadImages.forEach(function(img) {
 				if (img.offsetTop - 1000 < (window.innerHeight + scrollTop)) {
-					img.src = img.dataset.src;
+					try {
+						img.src = img.dataset.src;
+					} catch(err) {
+						console.log(err);
+						console.warn(`Error loading image ${img.src}; most likely 502 error caused by too many requests.`);
+					}
 					img.classList.remove('lazys');
 					img.classList.add("fade-in");
 				}
 			});
-			console.log(document.querySelectorAll("img.lazys"));
 			if (document.querySelectorAll("img.lazys").length == 0) {
 				document.removeEventListener("scroll", lazyload);
 				window.removeEventListener("resize", lazyload);

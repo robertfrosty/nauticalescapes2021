@@ -6,9 +6,9 @@ function onChange(checkbox, xfunc) {
 function simpDrop(on, xval) {
 	if (on) {
 		xval.parentElement.parentElement.style.height = "auto";
-		xval.style.transform = "rotate(180deg)";
+		xval.style.transform = "rotate(180deg) translate(50%, 0)";
 	} else {
-		xval.parentElement.parentElement.style.height = "80vw";
-		xval.style.transform = "rotate(0deg)";
+		xval.parentElement.parentElement.style.height = "105vw";
+		xval.style.transform = "rotate(0deg) translate(-50%, 0)";
 	}
 }

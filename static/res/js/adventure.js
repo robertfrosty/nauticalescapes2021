@@ -13,6 +13,7 @@ function hideMap(e) {
 }
 
 function textswap(e) {
+	console.log(e.previousElementSibling.previousElementSibling.children[0]);
 	if (! e.previousElementSibling.previousElementSibling.children[0].src) {
 		var imgs = e.previousElementSibling.previousElementSibling.children;
 		for(i=0; i < imgs.length; i++) {
@@ -27,13 +28,13 @@ function textswap(e) {
 x = true;
 
 function loadAllAdvents(vid) {
-	console.log(x);
 	if (x) {
 	const promise1 = new Promise((resolve, reject) => {
 		var xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function () {
 			if (this.readyState == 4 && this.status == 200) {
 				lsi2 = JSON.parse(xhttp.responseText);
+				console.log(lsi2);
 				var ll = document.getElementsByClassName("adventure").length;
 				for (i=0; i < lsi2.length; i++) {
 					var dv = document.createElement("DIV");
@@ -55,7 +56,8 @@ function loadAllAdvents(vid) {
 					dv.appendChild(dv2);
 					var dv3 = document.createElement("DIV");
 					dv3.className = "adventure_text";
-					var head1 = document.createElement("H1");
+					var head1 = document.createElement("H2");
+					console.log(head1);
 					head1.innerHTML = lsi2[i][7];
 					var p1 = document.createElement("P");
 					p1.className = "textswap";

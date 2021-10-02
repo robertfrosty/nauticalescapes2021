@@ -17,7 +17,7 @@
 	</div>
 </div>
 <div class="content">
-	<h2>Request A Quote</h2>
+	<h2 class="title4">Request A Quote</h2>
 	<p class="subheading">Please fill out all the information that is required on the form below, and we will respond once we recieve your message. All inquiries will be responded to.</p>
 	<form action="/contact/booking" method="POST">
 	<div class="booking" id="1">
@@ -55,7 +55,7 @@
 		<button type="button" class="button_white" onclick="nextBook(this.parentElement.id)">Next</button>
 	</div>
 	<div class="booking nonactive" id="2">
-		<h4>Contact Information</h4>
+		<span class="title4">Contact Information</span>
 		<div class="book_select">
 			<div class="bs_indiv">
 				<span></span>
@@ -82,7 +82,7 @@
 		<button type="button" class="button_white" onclick="nextBook(this.parentElement.id)">Next</button>
 	</div>
 	<div class="booking nonactive" id="3">
-		<h4>Information Confirmation</h4>
+		<span class="title4">Information Confirmation</span>
 		<div class="book_select">
 			<div class="bs_indiv">
 				<span></span>
@@ -97,21 +97,23 @@
 				<p>Confirm</p>
 			</div>
 		</div>
-		<h4>Confirm Information</h4>
+		<span class="title5">Confirm Information</span>
 		<p class="subheading">Please ensure that all the information that you have entered up until this point is correct before submitting the form.</p>
-		<div class="confirm_book">
-			<h4>Booking Information</h4>
-			<p></p>
-			<p></p>
-			<p></p>
-			<p></p>
-		</div>
-		<div class="confirm_contact">
-			<h4>Contact Information</h4>
-			<p></p>
-			<p></p>
-			<p></p>
-			<p></p>
+		<div class="confirm_overflow">
+			<div class="confirm_book">
+				<span class="title6">Booking Information</span>
+				<p><b>Daycation Type :</b> </p>
+				<p><b>Daycation Date :</b> </p>
+				<p><b>Daycation Occupants :</b> </p>
+				<p><b>Daycations Amenities :</b> </p>
+			</div>
+			<div class="confirm_contact">
+				<span class="title6">Contact Information</span>
+				<p><b>Full Name :</b> </p>
+				<p><b>Mobile Number :</b> </p>
+				<p><b>Email :</b> </p>
+				<p><b>Additional Information :</b> </p>
+			</div>
 		</div>
 		<button class="button_white" style="width:100%;">Submit</button>
 	</div>

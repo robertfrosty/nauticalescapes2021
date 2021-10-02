@@ -12,9 +12,6 @@
 	color: #122449;
 }
 
-.content p {
-	font-size: 1.6vw;
-}
 
 .all_images {
 	display: flex;
@@ -24,39 +21,6 @@
 .all_images img{
 	width: calc(33% - 4vw);
 	margin: 2vw;
-}
-
-.blownup_nav {
-	display: block;
-	width: 50%;
-	overflow: scroll;
-	display: none;
-	margin: 0 auto;
-	white-space: nowrap;
-	font-size: 0;
-	-ms-overflow-style: none;
-	scrollbar-width: none;
-}
-
-.blownup_nav::-webkit-scrollbar {
-	display: none;
-}
-
-.blownup_nav img {
-	display: inline-block;
-	width: 13vw;
-	height: 6vw;
-	object-fit: cover;
-	cursor: pointer;
-	filter: brightness(0.4);
-}
-
-.blownup_nav img:hover {
-	filter: brightness(1);
-}
-
-.nav_active {
-	filter: brightness(1) !important;
 }
 
 .infobox_cont {
@@ -69,7 +33,7 @@
 
 .infobox {
 	display: flex;
-	margin-bottom: 20vw;
+	margin-bottom: 25vmin;
 }
 
 .infobox h2 {
@@ -82,7 +46,7 @@
 
 .infobox p {
 	margin: 2vw;
-	font-size: 1.6vw;
+	font-size: 1.6vmax;
 	color: #000;
 }
 
@@ -97,7 +61,7 @@
 
 .infobox .infobox_slideshow .polar {
 	position: absolute;
-	width: 35%;
+	min-width: 35%;
 }
 
 .polar img {
@@ -170,4 +134,10 @@
 
 .images button {
 	width: 10vw;
+}
+
+@media screen and (max-width: 800px) {
+	.infobox {
+		margin-bottom: 15vmin;
+	}
 }

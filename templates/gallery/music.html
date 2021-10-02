@@ -27,7 +27,7 @@
 	<div class="infobox_cont">
 		<div class="infobox">
 			<div class="infobox_text">
-				<h2>Our Favourites</h2>
+				<span class="title4">Our Favourites</span>
 				<p>We love all music, but "The Blues" is our favourite. You will always find some genre playing on our boat.</p>
 			</div>
 			<div class="infobox_slideshow">
@@ -47,7 +47,7 @@
 		</div>
 		<div class="infobox">
 			<div class="infobox_text">
-				<h2>Friendly Musicians</h2>
+				<span class="title4">Friendly Musicians</span>
 				<p>On our adventures we've come across some very talented musicians. Some of them have been on our boat playing a live set while we were in the Parade Of Lights at Canal Days in Port Colborne, Ontario. Our hope is to someday include them into our "Daycation" cruises.</p>
 			</div>
 			<div class="infobox_slideshow">
@@ -67,7 +67,7 @@
 		</div>
 		<div class="infobox">
 			<div class="infobox_text">
-				<h2>Supporting Our Friends</h2>
+				<span class="title4">Supporting Our Friends</span>
 				<p>Worth a gander! Eh! Use social media to checkout these amazing musicians. Support these artists. Go to our Daycations page under Partners and Related links to find out more.</p>
 			</div>
 			<div class="infobox_slideshow">
@@ -87,7 +87,8 @@
 		</div>		
 	</div>
 	<div class="images">
-		<h2>All Images</h2>
+		<div class="imageviewer_cont"><div class="imageviewer"></div><img src="{{ url_for('static', filename='images/icons/x-icons/whitex.png') }}" class="icon_cont invisible"></div>
+		<span class="title4">All Images</span>
 		<p class="subheading">Check out all of our images below, and if you just can't get enough of the fantastic {{ mediat['header'] }} pictures, follow us on Instagram, Facebook, and subscribe to our Youtube Channel.</p>
 		<!--
 		<button onclick="rimages()" class="button_white">Images Only</button>
@@ -97,7 +98,6 @@
 		{% for item in mediat["content"] %}
 			<div class="slidebox">
 				<img class="trgimg lazys" src="{{ url_for('static', filename='images/fallback.png') }}" data-src="{{ url_for('static', filename='images/media/') }}{{ mediat['header'] }}/{{item}}" onclick="imgfs(this)" id="{{ loop.index }}" alt="{{ mediat['header'] }}">
-				<img src="{{ url_for('static', filename='images/icons/x-icons/whitex.png') }}" class="icon_cont invisible">
 			</div>
 		{% endfor %}
 		</div>

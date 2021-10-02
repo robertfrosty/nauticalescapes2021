@@ -2,6 +2,7 @@ body {
 	height: 100%;
 	overflow: hidden;
 }
+
 .daycations_title {
 	margin-top: 1vw;
 	width: 100%;
@@ -9,9 +10,17 @@ body {
 	margin-bottom: 4vw;
 }
 
-.daycations_title h1 {
+.daycations_title .title1 {
+	margin: 5vmax 0;
 	color: #122449;
-	font-size: 4vw;
+}
+
+.title4 {
+	text-align: revert;
+}
+
+.pop_cont .title5 {
+	color: #76A1C8;
 }
 
 .subheading {
@@ -48,22 +57,22 @@ body {
 }
 
 .hero_text h1 {
-	font-size: 6vw;
 	width: 100%;
 	margin-bottom: 2vw;
 	color: #FFF;
+	font-size: 6vmax;
 }
 
 .hero_text p {
-	font-size: 1.8vw;
+	font-size: 1.8vmax;
 	color: #FFF;
 }
 
 .hero_text img {
 	filter: opacity(1);
 	margin-top: 2vw;
-	height: 5vw;
-	width: 5vw;
+	height: 5vmax;
+	width: 5vmax;
 	cursor: pointer;
 }
 
@@ -88,7 +97,7 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	width: calc(100% - 8vw);
-	height: 30vw;
+	min-height: 40vmax;
 	margin: 0vw 4vw;
 	justify-content: center;
 	margin-bottom: 2vw;
@@ -275,7 +284,7 @@ body {
 }
 
 .pop_cont_text p {
-	font-size: 1.4vw;
+	font-size: 1.4vmax;
 	color: #000;
 	padding: 0.4vw;
 	margin: 1.4vw 4vw 2.4vw 4vw;
@@ -351,9 +360,6 @@ body {
 	.hero_text h2 {
 		font-size: 5vw;
 	}
-	.hero_text p {
-		font-size: 2.8vw;
-	}
 	.daycations_title h1 {
 		font-size: 5vw;	
 	}
@@ -364,7 +370,6 @@ body {
 		font-size: 3.5vw;	
 	}
 	.shapeflex_text p {
-		font-size: 2.7vw;
 		margin: 1vw 0vw;
 	}
 	.pop_box {
@@ -373,17 +378,8 @@ body {
 	.pop_box h2 {
 		font-size: 5vw;	
 	}
-	.pop_box p {
-		font-size: 2.7vw;
-	}
 	.pop_cont_text h1 {
 		font-size: 3.5vw;
-	}
-	.pop_cont_text p {
-		font-size: 2.3vw;
-	}
-	.shapeflex {
-		height: 42vw;
 	}
 	.shapeflex:nth-child(1n+2) {
 		margin-top: 35vw;

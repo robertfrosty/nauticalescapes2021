@@ -2,6 +2,13 @@
 	object-fit: cover;
 }
 
+.hero_text h2 {
+	font-size: 6vmax;
+	width: 100%;
+	margin-bottom: 2vmax;
+	color: #FFF;
+}
+
 .hero_text p {
 	margin-bottom: 7vw; /* This line is here to replace the height of the arrows image that is here on the homepage */
 }
@@ -10,16 +17,13 @@
 	margin: 0vw 4vw;
 }
 
-.content h1 {
-	margin-top: 4vw;
-	font-size: 3vw;
-	color: #122449;
-	text-align: center;
+.content .title4 {
+	margin: 2vmax 0;
 }
 
 .content p {
 	text-align: center;
-	width: 50%;
+	width: 75%;
 	margin: 0 auto;
 	margin-bottom: 2vw;
 }
@@ -90,7 +94,7 @@
 .polar span i {
 	letter-spacing: 3px;
 	text-transform: capitalize;
-	font-size: 2.2vw;
+	font-size: 3vmax;
 	color: #122449;
 	font-style: normal;
 	font-family: 'Pacifico', sans-serif;
@@ -123,34 +127,6 @@
 	transform: scale(1.05);
 }
 
-.blownup_nav {
-        display: block;
-        width: 50%;
-        overflow: scroll;
-        display: none;
-        margin: 0 auto;
-        white-space: nowrap;
-        font-size: 0;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-}
-
-.blownup_nav::-webkit-scrollbar {
-        display: none;
-}
-
-.blownup_nav img {
-        display: inline-block;
-        width: 13vw;
-        height: 6vw;
-        object-fit: cover;
-        cursor: pointer;
-        filter: brightness(0.4);
-}
-
-.blownup_nav img:hover {
-        filter: brightness(1);
-}
 /* Tablet */
 @media screen and (min-width:769px) and (max-width: 1024px) {
 	.slidebox {
@@ -196,18 +172,5 @@
 	.slidebox {
 		width: 49%;
 		height: 40vw;
-	}
-	.blownup {
-		padding-top: 20%;
-	}
-	.icon_cont {
-		height: 5vw;
-		width: 5vw;
-		top: 24vw;
-		right: 18%;	
-	}
-	.blownup_nav img {
-		height: 8vw;
-		width: 16vw;
 	}
 }

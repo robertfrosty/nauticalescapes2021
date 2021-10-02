@@ -62,6 +62,17 @@ def load_Weather():
 
 	return y, z
 
+def load_RecentLocation():
+	cur = mysql.connection.cursor()
+	cur.execute("SELECT location, lat, lng FROM advents ORDER BY date_s DESC LIMIT 1")
+	tmpInfo = cur.fetchone()
+
+	tmpInfo = tmpInfo[0]
+
+	cur.close()
+
+	return tmpInfo
+
 def load_Advents(val=0, lim=9999):
 	cur = mysql.connection.cursor()
 	cur.execute("SELECT * FROM advents ORDER BY id ASC LIMIT %s, %s", [val, lim])
@@ -128,15 +139,17 @@ def homepage():
 	images = os.listdir("static/images/hero/")
 	daycations = load_Daycations()
 	y, z = load_Weather()
+	latlong = load_RecentLocation()
 
-	return render_template('homepage.html', images=images, daycations=daycations, weat=y, temp=z)
+	return render_template('homepage.html', images=images, daycations=daycations, latlong=latlong, weat=y, temp=z)
 
 @main.route("/booking")
 def booking():
 	daycations = load_Daycations()
 	y, z = load_Weather()
+	latlong = load_RecentLocation()
 
-	return render_template("booking.html", daycations=daycations, weat=y, temp=z)
+	return render_template("booking.html", daycations=daycations, latlong=latlong, weat=y, temp=z)
 
 @main.route("/gallery")
 def media():
@@ -154,8 +167,9 @@ def media():
 		media_ls.append(dict_add)
 
 	y, z = load_Weather()
+	latlong = load_RecentLocation()
 
-	return render_template('media.html', media=media_ls, weat=y, temp=z)
+	return render_template('media.html', media=media_ls, latlong=latlong, weat=y, temp=z)
 
 @main.route("/gallery/<medtype>")
 def mediatype(medtype):
@@ -178,7 +192,8 @@ def mediatype(medtype):
 	for x in media_ls:
 		if medtype == x["header"]:
 			y, z = load_Weather()
-			return render_template("gallery/" + medtype + ".html", mediat=x, weat=y, temp=z)
+			latlong = load_RecentLocation()
+			return render_template("gallery/" + medtype + ".html", mediat=x, latlong=latlong, weat=y, temp=z)
 
 	return "Error 404"
 
@@ -186,24 +201,28 @@ def mediatype(medtype):
 def daycations():
 	daycations = load_Daycations()
 	y, z = load_Weather()
-	return render_template('daycations.html', daycations=daycations, weat=y, temp=z)
+	latlong = load_RecentLocation()
+	return render_template('daycations.html', daycations=daycations, latlong=latlong, weat=y, temp=z)
 
 @main.route("/ourcrew")
 def ourcrew():
 	y, z = load_Weather()
-	return render_template('contact/ourcrew.html', weat=y, temp=z)
+	latlong = load_RecentLocation()
+	return render_template('contact/ourcrew.html', latlong=latlong, weat=y, temp=z)
 
 @main.route("/ourboats")
 def ourboats():
 	y, z = load_Weather()
-	return render_template('contact/ourboats.html', weat=y, temp=z)
+	latlong = load_RecentLocation()
+	return render_template('contact/ourboats.html', latlong=latlong, weat=y, temp=z)
 
 @main.route("/ouradventure")
 def ouradventure():
 	pins = load_Advents()
 	advents = load_Advents(0, 5)
 	y, z = load_Weather()
-	return render_template('ouradventure.html', pins=pins, advents=advents, weat=y, temp=z)
+	latlong = load_RecentLocation()
+	return render_template('ouradventure.html', pins=pins, advents=advents, latlong=latlong, weat=y, temp=z)
 
 @main.route("/ouradventure_load", methods=['POST'])
 def ouradventure_load():
@@ -272,7 +291,8 @@ def addadventure():
 @main.route("/contact")
 def contactus():
 	y, z = load_Weather()
-	return render_template("contact.html", weat=y, temp=z)
+	latlong = load_RecentLocation()
+	return render_template("contact.html", latlong=latlong, weat=y, temp=z)
 
 @main.route("/contact/sendamessage", methods=["GET", "POST"])
 def sendmessage():
@@ -307,17 +327,20 @@ def sendmessage():
 @main.route("/contact/social")
 def social():
 	y, z = load_Weather()
-	return render_template("contact/social.html", weat=y, temp=z)
+	latlong = load_RecentLocation()
+	return render_template("contact/social.html", latlong=latlong, weat=y, temp=z)
 
 @main.route("/contact/faq")
 def faq():
 	y, z = load_Weather()
-	return render_template("contact/faq.html", weat=y, temp=z)
+	latlong = load_RecentLocation()
+	return render_template("contact/faq.html", latlong=latlong, weat=y, temp=z)
 
 @main.route("/contact/licensing")
 def lic():
 	y, z = load_Weather()
-	return render_template("contact/lic.html", weat=y, temp=z)
+	latlong = load_RecentLocation()
+	return render_template("contact/lic.html", latlong=latlong, weat=y, temp=z)
 
 @main.route("/contact/booking", methods=["POST"])
 def sendbooking():
@@ -461,7 +484,8 @@ def admin():
 	emergencies = load_Emergencies()
 	messages = load_Messages()
 	y, z = load_Weather()
-	return render_template("admin/admin.html", messages=messages, emergencies=emergencies, weat=y, temp=z)
+	latlong = load_RecentLocation()
+	return render_template("admin/admin.html", messages=messages, emergencies=emergencies, latlong=latlong, weat=y, temp=z)
 
 @main.route("/admin", methods=["POST"])
 @login_required

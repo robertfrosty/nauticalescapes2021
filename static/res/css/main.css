@@ -42,14 +42,14 @@ body {
 }
 
 .hero_text h1 {
-	font-size: 6vw;
+	font-size: 8vmax;
 	width: 100%;
-	margin-bottom: 2vw;
+	margin-bottom: 2vmax;
 	color: #FFF;
 }
 
 .hero_text p {
-	font-size: 1.8vw;
+	font-size: 2.6vmax;
 	color: #FFF;
 }
 
@@ -84,9 +84,9 @@ body {
 .uc {
 	position: absolute;
 	z-index: 3;
-	width: 45%;
+	width: 50%;
 	object-fit: cover;
-	top: 60%;
+	top: 55%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	background: #333;
@@ -108,30 +108,54 @@ body {
 
 .uc span {
 	display: block;
-	font-size: 2vw;
+	font-size: 2vmax;
 	margin: 1vw;
 	font-weight: bold;
 }
 
 .uc p {
-	font-size: 1.4vw;
+	font-size: 1.4vmax;
 	margin: 2vw;
 }
 
 .uc button {
-	font-size: 1.4vw;
+	font-size: 1.4vmax;
 }
 
 .mini_title {
 	display: block;
-	font-size: 2vw;
+	font-size: 2.5vmax;
 	color: #76A1C8;
 	text-align: center;
 }
 
-.title4 {
+.title1 {
+	text-align: center;
+	color: #122449;
+	width: 100%;
 	font-weight: bold;
 	display: block;
+	font-size: 5vmax;
+}
+
+.title4 {
+	text-align: center;
+	font-weight: bold;
+	display: block;
+	font-size: 4vmax;
+	color: #122449;
+}
+
+.title5 {
+	font-weight: bold;
+	display: block;
+	font-size: 2.5vmax;
+}
+
+.title6 {
+	font-weight: bold;
+	display: block;
+	font-size: 1.2vmax;
 }
 
 .contact_hero {
@@ -163,7 +187,7 @@ body {
 }
 
 .contact_hero_info h2 {
-	font-size: 6vw;
+	font-size: 6vmax;
 	width: 100%;
 	margin-bottom: 0vw;
 }
@@ -171,7 +195,7 @@ body {
 .contact_hero_info p {
 	margin-top: 2vw;
 	width: 100%;
-	font-size: 1.8vw;
+	font-size: 1.8vmax;
 }
 
 .info_box {
@@ -185,7 +209,7 @@ body {
 
 .subheading {
 	color: #000;
-	font-size: 1.4vw;
+	font-size: 2vmax;
 }
 
 .sitemap_hor {
@@ -215,9 +239,9 @@ body {
 }
 
 .button_blue {
-	font-size: 0.8vw;
+	font-size: 1.2vmax;
 	margin: 0.4vw;
-	padding: 0.4vw 2vw;
+	padding: 0.4vw 2vmax;
 	background: #76A1C8;
 	color: #FFF;
 	border: 2px solid #FFF;
@@ -231,10 +255,27 @@ body {
 	border: 2px solid #FFF;
 }
 
-.button_black {
-	font-size: 0.8vw;
+.button_navy {
+	font-size: 1.2vmax;
 	margin: 0.4vw;
-	padding: 0.4vw 2vw;
+	padding: 0.4vw 2vmax;
+	background: #122449;
+	color: #FFF;
+	border: 2px solid #FFF;
+	border-radius: 15px;
+	cursor: pointer;
+}
+
+.button_navy:hover {
+	color: #122449;
+	background: #FFF;
+	border: 2px solid #FFF;
+}
+
+.button_black {
+	font-size: 1.2vmax;
+	margin: 0.4vw;
+	padding: 0.4vmax 2vmax;
 	background: #000;
 	color: #FFF;
 	border: 2px solid #FFF;
@@ -249,9 +290,9 @@ body {
 }
 
 .button_white {
-	font-size: 1.2vw;
-	margin: 0.4vw;
-	padding: 0.4vw 2vw;
+	font-size: 1.2vmax;
+	margin: 0.4vmax;
+	padding: 0.4vmax 2vmax;
 	background: #fff;
 	color: #76a1c8;
 	border: 2px solid #76a1c8;
@@ -336,7 +377,7 @@ body {
         display: flex;
         flex-wrap: wrap;
         width: 100%;
-	margin: 6vw 0vw;
+	margin: 6vmax 0;
 }
 
 .pop_cont:nth-child(even) {
@@ -414,7 +455,6 @@ body {
 	top: 0;
 	left: 0;
 	background: rgba(0,0,0,0.8);
-	padding-top: 4%;
 	text-align: center;
 }
 
@@ -428,15 +468,76 @@ body {
 }
 
 .icon_cont {
-	height: 2vw;
-	width: 2vw;
+	height: 2vmax;
+	width: 2vmax;
 	border: none;
 	position: absolute;
-	top: 6vw;
-	right: 28%;
+	top: 15.5%;
+	right: 15.5%;
 	cursor: pointer !important;
 	filter: brightness(0);
 }
+
+.imageviewer_cont {
+	display: none;
+	position: fixed;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.6);
+	z-index: 99;
+}
+.imageviewer {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.imageviewer_cont .imgv {
+	position: absolute;
+	width: 75%;
+	height: 75%;
+	object-fit: cover;
+	inset: 0;
+	margin: auto;
+}
+
+.blownup_nav {
+	position: absolute;
+	bottom: 12.5%;
+	left: 50%;
+	transform: translate(-50%, 0);
+	display: block;
+	width: 75%;
+	overflow: scroll;
+	display: none;
+	margin: 0 auto;
+	white-space: nowrap;
+	font-size: 0;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+.blownup_nav::-webkit-scrollbar {
+	display: none;
+}
+
+.blownup_nav img {
+	display: inline-block;
+	width: 13vmax;
+	height: 6vmax;
+	object-fit: cover;
+	cursor: pointer;
+	filter: brightness(0.4);
+}
+
+.blownup_nav img:hover {
+	filter: brightness(1);
+}
+
+.nav_active {
+	filter: brightness(1) !important;
+}
+
 
 .fishies {
 	z-index: -1;
@@ -639,7 +740,7 @@ a {
 	right: 15%;
 	width: 0;
 	height: 0;
-	border: 0.4vw solid transparent;
+	border: 0.4vmax solid transparent;
 	border-color: #FFF transparent transparent transparent;
 }
 
@@ -668,7 +769,8 @@ a {
 	background: #122449;
 	color: #FFF;
 	cursor: pointer;
-	height: 2.5vw;
+	font-size: 1.4vmax;
+	height: 2.5vmax;
 	width: 14vw;
 	display: flex;
 	align-items: center;
@@ -771,35 +873,75 @@ a {
 .weather img {
 	display: none;
 }
+.weather_applet {
+	position: fixed;
+	bottom: 0;
+	right: 0;       
+	padding: 0.4vmax;
+	background: rgba(18,36,73,0.8);
+	border: 0.3vmax solid #FFF;
+	border-radius: 10px 0 0 10px;
+	z-index: 98;
+	color: #FFF;
+}
+
+.weather_applet div {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+.weather_applet div img {
+	width: 4vmax;
+	height: auto;
+}
+
+.weather_applet div .watemp {
+	font-size: 2vmax;
+}
+
+.weather_applet div .walocation {
+	width: 100%;
+}
+
 .chngclr {
 	background: rgba(18, 36, 73, 0.95);
 }
 @media screen and (min-width: 214px) and (max-width: 1024px) {
+	.weather_applet {
+		display: none;
+	}
 	.navbar_bottom {
 		display: none !important;
 	}
 	.hamburg_cont {
 		display: inline-block;
 		cursor: pointer;
+		position: relative;
 	}
 	.bar1, .bar2, .bar3 {
 		border-radius: 5px;
-		width: 4vw;
-		height: 0.6vw;
+		width: 2vmax;
+		height: 0.2vmax;
 		background-color: #fff;
 		margin: 0.65vw 0;
 		transition: 0.4s;
 	}
 	.change .bar1 {
 		-webkit-transform: rotate(-45deg) translate(-1vw, 0.6vw);
-		transform: rotate(-45deg) translate(-1vw, 0.6vw);
+		transform: rotate(45deg);
+		position: absolute;
+		top: 0;
 	}
 	.change .bar2 {
 		opacity: 0;
 	}
 	.change .bar3 {
 		-webkit-transform: rotate(45deg) translate(-1vw, -1vw);
-		transform: rotate(45deg) translate(-1vw, -1vw);
+		transform: rotate(-45deg);
+		position: absolute;
+		bottom: 0;
 	}
 	.weather {
 		display: flex;
@@ -859,6 +1001,20 @@ a {
 		width: 50%;
 		margin: 2vw auto;
 		display: block !important;
+	}
+}
+@media screen and (max-width:1024px) {
+	.anc_cont_mobi_rel {
+		position: relative;
+		width: 100%;
+		height: 100%;
+	}
+	.anc_cont_mobi_abs {
+		position: absolute;
+		width: 100%;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
 	}
 }
 @media screen and (min-width:1025px) {
@@ -977,11 +1133,11 @@ a {
 	display: none;
 }
 
-/* Tablet */
+/* Footer-Tablet */
 @media screen and (min-width:769px) and (max-width: 1024px) {
 
 }
-/* Mobile */
+/* Footer-Mobile */
 @media screen and (min-width:214px) and (max-width: 768px) {
 	.footer_top {
 		flex-wrap: wrap;
@@ -1052,86 +1208,27 @@ a {
 	66%{transform: rotate(-45deg);}
 	100%{transform: rotate(-0deg);}
 }
-	/* Tablet */
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
-	/* Gallery */
-	.contact_hero_info h2 {
-		font-size: 8vw !important;
-	}
-	.info_box p {
-		font-size: 2vw !important;
-	}
-	.content h1 {
-		font-size: 8vw !important;
-	}
-	.content p {
-		font-size: 3vw !important;
-	}
-	.polar span i {
-		font-size: 5vw !important;
-	}
-	.our_images button {
-		width: 20vw !important;
-	}
-	.button_white {
-		font-size: 2vw !important;
-	}
-	/* Contact */
-	.option h2 {
-		font-size: 4vw !important;
-	}
-	.answer p {
-		width: calc(100% - 8vw) !important;
-	}
-	/* Booking */
-	.content h2 {
-		font-size: 4vw !important;
-	}
-	.booking h4 {
-		font-size: 4.4vw !important;
-	}
-	.booking label {
-		font-size: 3.6vw !important;
-	}
-}
 	/* Mobile */
 @media screen and (min-width: 214px) and (max-width: 768px) {
 	.mobonly {
 		display: none;
 	}
+	.title4 {
+		font-size: 4vmax;
+	}
+	.title5 {
+		font-size: 2.8vmax;
+	}
+	.title6 {
+		font-size: 2.6vmax;
+	}
 	/* Request A Quote */
 	/* Gallery */
-	.contact_hero_info h2 {
-		font-size: 8vw !important;
-	}
-	.info_box p {
-		font-size: 3.6vw !important;
-	}
-	.content h1 {
-		font-size: 6vw !important;
-	}
-	.content p {
-		font-size: 3vw !important;
-	}
 	.our_images button {
 		width: 20vw !important;
 	}
-	.button_white {
-		font-size: 2vw !important;
-	}
-	/* Contact */
-	.option h2 {
-		font-size: 3vw !important;
-	}
-	/* Booking */
-	.content h2 {
-		font-size: 4vw !important;
-	}
-	.booking h4 {
-		font-size: 4.4vw !important;
-	}
-	.booking label {
-		font-size: 3.6vw !important;
+	.button_white, .button_blue, .button_navy, .button_black {
+		font-size: 1.6vmax;
 	}
 	/* Media */
 	.polar_box {
