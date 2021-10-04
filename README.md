@@ -4,8 +4,13 @@
 
 Base Website Design For Nautical Escapes 2021, with any sensitive information removed. 
 
+***Homepage with bottom navbar, (bottom navbar remove in production until clients acquire necessary licenses)***
+![screenshot of nautical escapes 2021 homepage w/ navbar bottom](./screenshots/nauticalescapes2021.com_navbar.png)
+
+***Homepage Production Version***
 ![screenshot of nautical escapes 2021 homepage](./screenshots/nauticalescapes2021.com_.png)
--Screenshot taken with Google Chrome Inspector Commands-
+
+-Screenshots taken with Google Chrome Inspector Commands-
 
 ***Personal Thoughts***
 
