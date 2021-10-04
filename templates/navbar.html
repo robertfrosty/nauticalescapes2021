@@ -41,12 +41,6 @@
 				</div>
 			</div>
 		</div>
-		<!--<script>
-			if (window.innerWidth < 800) {
-				var numx = window.innerHeight - (document.documentElement.clientWidth / 100 * 64);
-				document.getElementsByClassName("anc_cont")[0].style.height = numx.toString() + "px";
-			}
-		</script>-->
 		<div class="weather">
 			<a href="https://openweathermap.org/city/6111704" target="_blank" rel="noreferrer">
 				<img alt="Picture of the current weather" src="{{ weat }}">
@@ -59,10 +53,9 @@
 		<div class="custom_select">
 			<select>
 				<option>Select Daycation Type</option>
-				<option>Sunset Cruise</option>
-				<option>Drop A Line</option>
-				<option>Thai Massage</option>
-				<option>Blues And Cruise</option>
+				{% for daycation in daycations %}
+				<option>{{ daycation.name }}</option>
+				{% endfor %}
 			</select>
 		</div>
 		<input id="charterdate" type="text" name="charter_date" placeholder="Date : 2021-01-01" onfocus="(this.type='date')" onblur="(this.type='text')" onchange="chartercheck()">

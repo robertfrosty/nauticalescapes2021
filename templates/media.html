@@ -26,7 +26,7 @@
 	<span class="title4">Our Image Gallery</span>
 	<p class="subheading">Welcome to our collection of images! Select one of the options below to see certain types of images, or head further down the page to check out our collection in it's entirety.</p>
 	<div class="polar_box">
-		{% for list in media %}
+		{% for list in args['media'] %}
 		{% set var = range(0, list['content']|length) | random %}
 		<a href="/gallery/{{list['header']}}" class="polar">
 			<img src="{{ url_for('static', filename='images/media/') }}{{list['header']}}/{{list['content'][var]}}" alt="image of {{ list['header'] }}">
@@ -46,7 +46,7 @@
 		</div>
 		<div class="image_slides" id="image_slides">
 			{% set test = namespace(value=1) %}
-			{% for list in media %}
+			{% for list in args['media'] %}
 			{% for image in list["content"] %}
 			<div class="slidebox">
 				<img class="trgimg lazys" src="{{ url_for('static', filename='images/fallback.png') }}" data-src="{{ url_for('static', filename='images/media/') }}{{ list['header'] }}/{{ image }}" onclick="imgfs(this)" id="{{ test.value }}" alt="image of {{ list['header'] }}">
@@ -56,7 +56,7 @@
 			{% endfor %}
 			<div class="blownup_nav" onmousemove="hovScroll(event.clientX)" onmouseleave="stopProp()">
 				{% set test = namespace(value=1) %}
-				{% for list in media %}
+				{% for list in args['media'] %}
 				{% for item in list["content"] %}
 					<img data-src="{{url_for('static',filename='images/media/')}}{{list['header']}}/{{ item }}" onclick="both(document.getElementById({{ test.value }}))">
 				{% set test.value = test.value + 1 %}

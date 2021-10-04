@@ -1,6 +1,6 @@
 {% extends "temp.html" %}
 {% block css_title %}mediat{% endblock %}
-{% block title %} {{mediat["header"]}} {% endblock %}
+{% block title %} {{args['mediat']["header"]}} {% endblock %}
 {% block description %}Nautical Escapes 2021 Boats Image Gallery{% endblock %}
 {% block other_scripts %}
 <link rel="stylesheet" href="{{ url_for('static', filename='res/css/hero.css') }}">
@@ -15,9 +15,9 @@
 {% block onload %}onload="loadCustomSelect()"{% endblock %}
 {% block content %}
 <div class="contact_hero">
-	<img src="{{ url_for('static', filename='images/media/') }}{{ mediat['header'] }}/{{ mediat['content'][0] }}" alt="Sailboat in the water in front of a double rainbow">
+	<img src="{{ url_for('static', filename='images/media/') }}{{ args['mediat']['header'] }}/{{ args['mediat']['content'][0] }}" alt="Sailboat in the water in front of a double rainbow">
 	<div class="contact_hero_info">
-		<h2 style="text-transform: capitalize;">{{ mediat["header"] }}</h2>
+		<h2 style="text-transform: capitalize;">{{ args['mediat']["header"] }}</h2>
 		<div class="info_box">
 			<p><i>Putt Putt Putt</i> goes the Trawler! We bought "Our Song" to be comfortable, and economical. As far as speed goes... We don't have to be anywhere by Monday!</p>
 		</div>
@@ -69,21 +69,21 @@
 	<div class="images">
 		<div class="imageviewer_cont"><div class="imageviewer"></div><img src="{{ url_for('static', filename='images/icons/x-icons/whitex.png') }}" class="icon_cont invisible"></div>
 		<span class="title4">All Images</span>
-		<p class="subheading">Check out all of our images below, and if you just can't get enough of the fantastic {{ mediat['header'] }} pictures, follow us on Instagram, Facebook, and subscribe to our Youtube Channel.</p>
+		<p class="subheading">Check out all of our images below, and if you just can't get enough of the fantastic {{ args['mediat']['header'] }} pictures, follow us on Instagram, Facebook, and subscribe to our Youtube Channel.</p>
 		<!--
 		<button onclick="rimages()" class="button_white">Images Only</button>
 		<button onclick="rgifs()" class="button_white">Gifs Only</button>
 		-->
 		<div class="image_slides" id="image_slides">
-		{% for item in mediat["content"] %}
+		{% for item in args['mediat']["content"] %}
 			<div class="slidebox">
-				<img class="trgimg lazys" src="{{ url_for('static', filename='images/fallback.png') }}" data-src="{{ url_for('static', filename='images/media/') }}{{ mediat['header'] }}/{{item}}" onclick="imgfs(this)" id="{{ loop.index }}" alt="{{ mediat['header'] }}">
+				<img class="trgimg lazys" src="{{ url_for('static', filename='images/fallback.png') }}" data-src="{{ url_for('static', filename='images/media/') }}{{ args['mediat']['header'] }}/{{item}}" onclick="imgfs(this)" id="{{ loop.index }}" alt="{{ args['mediat']['header'] }}">
 			</div>
 		{% endfor %}
 		</div>
 		<div class="blownup_nav" onmousemove="hovScroll(event.clientX)" onmouseleave="stopProp()">
-			{% for item in mediat["content"] %}
-				<img data-src="{{ url_for('static', filename='images/media/') }}{{ mediat['header'] }}/{{item}}" onclick="both(document.getElementById({{loop.index}}))">
+			{% for item in args['mediat']["content"] %}
+				<img data-src="{{ url_for('static', filename='images/media/') }}{{ args['mediat']['header'] }}/{{item}}" onclick="both(document.getElementById({{loop.index}}))">
 			{% endfor %}
 		</div>
 	</div>

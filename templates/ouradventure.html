@@ -23,7 +23,7 @@
 <div class="adventures">
 	<h2 class="title4">Places We've Been</h2>
 	<p class="subheading">Check out below to see some of the places that we've been and some of the things that we've done. Feel free to check out the map, (above), as well to see our adventure visualized.</p>
-	{% for advent in advents %}
+	{% for advent in args['advents'] %}
 	<div class="adventure" id="{{ loop.index }}">
 		<div class="adventure_imgs">
 			<img data-src="{{ url_for('static', filename='images/advents/')}}{{advent[3]['dir']}}/{{advent[3]['files'][0]}}" id="changeme_{{ advent[1] }}" class="lazys" alt="">
@@ -157,9 +157,9 @@ map.zoomControl.remove();
 
 L.control.zoom({position:'bottomright'}).addTo(map);
 
-{% for advent in pins %}
+{% for advent in args['pins'] %}
 L.marker([{{advent[8]}},{{advent[9]}}]).addTo(map)
-	.bindPopup('<h2>{{advent[7]}}</h2>{{advent[10]}}<br><button class="button_white" style="padding: 0.2vw 1w; font-size: 0.6vw;" onclick="loadAllAdvents({{loop.index}})">Go To Adventure</button>');
+	.bindPopup('<h2>{{advent[7]}}</h2>{{advent[10]}}<br><button class="button_white" style="padding: 0.2vw 1w;" onclick="loadAllAdvents({{loop.index}})">Go To Adventure</button>');
 {% endfor %}
 </script>
 {% endblock %}
