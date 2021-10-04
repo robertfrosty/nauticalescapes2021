@@ -5,10 +5,11 @@ Base Website Design For Nautical Escapes 2021, with any sensitive information re
 -Screenshot taken with Google Chrome Inspector Commands-
 
 ***Personal Thoughts***
+This was my first large-scale project where I was completely in charge of developing all aspects of the website, and in addition I had moderately strict time requirements to uphold, so I felt a lot of pressure going into this project. Looking back would have done many things differently, however, I'm proud of the unique system that I created to receive and format information directly from the client, which will save the client a ton of time in the future. I'm very happy with the asthetic of the website, and when I have more time I have plans to go back and add in the animations that I have created all over the website.
 
 ***Search Engine Optimization***
 
-I was asked to delay any specific long-tail keyword optimization until COVID-19 ends, or even creating a Google 'My Business' Account, as the owners were hesitant to advertise their business before they were ready to launch. Notwithstanding that, I was able to ensure that nauticalescapes2021.com returned the number one result for 'nautical escapes' or 'nautical escapes 2021'.
+I was asked to delay any specific long-tail keyword optimization until COVID-19 ends, as the owners were hesitant to advertise their business before they were ready to launch. Notwithstanding that, I was able to ensure that nauticalescapes2021.com returned the number one result for 'nautical escapes' or 'nautical escapes 2021'.
 
 Google Search Console - All Queries
 ![screenshot of google search console s.e.o for nautical escapes 2021](./screenshots/google_search_allq.png)
@@ -29,4 +30,4 @@ The current implementation of the geolocation tracking is much simpler, and does
 
 ***Google Inspector Lighthouse Results***
 
-![screenshot of google chrome inspector lightouse results for nauticalescapes2021.com](./screenshots/lighthouse.PNG)
+![screenshot of google chrome inspector lighthouse results for nauticalescapes2021.com](./screenshots/lighthouse.PNG)
