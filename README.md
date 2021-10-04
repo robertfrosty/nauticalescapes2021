@@ -13,8 +13,9 @@ Google Search Console - All Queries
 ![screenshot of google search console s.e.o for nautical escapes 2021](./screenshots/google_search_allq.png)
 
 Google Search Console - Query ['nautical escapes']
-![screenshot of google search console s.e.o for nautical escapes 2021](./screenshots/google_search_allq.png)
+![screenshot of google search console s.e.o for nautical escapes 2021](./screenshots/google_search_neq.png)
 
+Google Search Results Page
 ![screenshot of google search results page for 'nautical escapes' query](./screenshots/google_search_resultsp.png)
 
 ***Geolocation / Marine AIS Solution***
