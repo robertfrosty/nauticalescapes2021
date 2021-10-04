@@ -1,6 +1,6 @@
 # Nautical Escapes 2021
 
-*** https://nauticalescapes2021.com ***
+***https://nauticalescapes2021.com***
 
 Base Website Design For Nautical Escapes 2021, with any sensitive information removed. 
 
