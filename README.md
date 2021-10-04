@@ -19,7 +19,7 @@ Google Search Results Page
 ![screenshot of google search results page for 'nautical escapes' query](./screenshots/google_search_resultsp.png)
 
 ***Geolocation / Marine AIS Solution***
-One of the main requirements, and the most worrying technical challenge for me when I started this project was the business owners desire to integrate Marine A.I.S tracking systems into the implementation of the 'blogish' features on the website. ![screenshot of marinetraffic.com](./screenshots/marrine_traffic.png)
+One of the main requirements, and the most worrying technical challenge for me when I started this project was the business owners desire to integrate Marine A.I.S tracking systems into the implementation of the 'blogish' features on the website. ![screenshot of marinetraffic.com](./screenshots/marine_traffic.png)
 
 At the beginning I had a very limited understanding of marine tracking intelligence systems, but given time I was able to look into a number of solutions for creating an automated system to receive AIS signals (VHF transceivers are able to receive signals from AIS), and update the website accordingly, however, in the end, the most efficient solution was to, (with permission), piggyback off of a service that receives AIS signals and records vessel locations in real-time. After setting all this up, and ensuring that I would be able to set-up what was needed, in the end, the business owners decided not to install AIS onboard their vessel anyways, but I still consider the entire process a valuable learning experience.
 
