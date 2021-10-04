@@ -5,6 +5,7 @@ Base Website Design For Nautical Escapes 2021, with any sensitive information re
 -Screenshot taken with Google Chrome Inspector Commands-
 
 ***Personal Thoughts***
+
 This was my first large-scale project where I was completely in charge of developing all aspects of the website, and in addition I had moderately strict time requirements to uphold, so I felt a lot of pressure going into this project. Looking back would have done many things differently, however, I'm proud of the unique system that I created to receive and format information directly from the client, which will save the client a ton of time in the future. I'm very happy with the asthetic of the website, and when I have more time I have plans to go back and add in the animations that I have created all over the website.
 
 ***Search Engine Optimization***
