@@ -25,10 +25,5 @@ At the beginning I had a very limited understanding of marine tracking intellige
 
 The current implementation of the geolocation tracking is much simpler, and does not run in real-time at all, for both financial and security reasons. When the business owners would like to place a pin on the leaflet.js map system (https://nauticalescapes2021.com/ouradventure), they simply authenticate using a trusted device, then complete a simple form, filling in the necessary information, while the web browser uses the cellular data to provide an accurate latitude and longitude. 
 
-**Animations***
-
-***leaflet.js Maps***
-
-**Current Weather***
-
 ***Google Inspector Lighthouse Results***
+![screenshot of google chrome inspector lightouse results for nauticalescapes2021.com](./screenshots/lighthouse.png)
