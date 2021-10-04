@@ -1,9 +1,6 @@
 #Ignore Files With Secret Keys
 charterboats.py
 
-#Ignore Mail Files Until It Is Cleaned Up ;)
-main.py
-
 #ignore Log Files
 app.log
 
