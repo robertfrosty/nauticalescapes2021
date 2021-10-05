@@ -40,6 +40,12 @@ The current implementation of the geolocation tracking is much simpler, and does
 ***Server Side Flow Of Information/Data***
 ![diagram showing flow of information from 'nginx' to 'uWSGI' to 'python web frameworks' and then to other services on linux server](./screenshots/diag.png)
 
+Documentation / Blogs : 
+https://uwsgi-docs.readthedocs.io/en/latest/ (Official uWSGI docs)
+https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/ (Official nginx docs)
+https://www.ultravioletsoftware.com/single-post/2017/03/23/An-introduction-into-the-WSGI-ecosystem (A helpful blog-post breaking down the different parts of the WSGI ecosystem)
+https://goutomroy.medium.com/request-and-response-cycle-in-django-338518096640 (Request and response life cycle in Django, I found helpful for understanding the flow of information)
+
 ***Google Inspector Lighthouse Results***
 
 ![screenshot of google chrome inspector lighthouse results for nauticalescapes2021.com](./screenshots/lighthouse.PNG)
