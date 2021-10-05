@@ -2,7 +2,7 @@
 
 ***https://nauticalescapes2021.com***
 
-Base Website Design For Nautical Escapes 2021, with any sensitive information removed. 
+Base Website Design For Nautical Escapes 2021, with any sensitive information removed. This website is written in HTML/CSS and mainly vanilla Javascript (specific libraries like leaflet.js and dragscroll.js are used), and hosted using a nginx & uWSGI web server that serves python web applications, all built on linux (of course), and provided by DigitalOcean.
 
 ***Homepage with bottom navbar, (bottom navbar removed in production until clients acquire necessary licenses)***
 ![screenshot of nautical escapes 2021 homepage w/ navbar bottom](./screenshots/nauticalescapes2021.com_navbar.png)
